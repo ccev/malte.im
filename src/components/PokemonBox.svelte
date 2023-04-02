@@ -12,7 +12,7 @@
 <div class="box-outline box-primary h-14 w-14 flex flex-col items-center justify-between">
     <img
         class="h-10 w-10 object-contain translate-y-1.5"
-        src="https://github.com/xxleevo/monicons/blob/master/classic/pokemon_icon_{formattedMonId}_{formattedFormId}.png?raw=true"
+        src="https://raw.githubusercontent.com/xxleevo/monicons/master/classic/pokemon_icon_{formattedMonId}_{formattedFormId}.png"
         alt={monId.name}
     >
 
