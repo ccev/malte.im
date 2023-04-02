@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    --color-1: hsl(50, 98%, 72%);
+    --color-2: hsl(50, 98%, 89%);
+
+    background: repeating-linear-gradient(
+        45deg,
+        var(--color-1),         var(--color-1) 60px,
+        var(--color-2) 60px,    var(--color-2) 70px );
+}
+
 @layer base {
     /* vietnamese */
     @font-face {
