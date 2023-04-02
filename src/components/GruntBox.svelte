@@ -63,12 +63,12 @@
 </script>
 
 <div
-    class="w-full max-w-xl font-lexend fit divide-slate-900 divide-y-2 bg-slate-800 box-outline text-slate-900 text-sm"
+    class="w-full max-w-xl font-lexend fit divide-slate-900 divide-y-2 bg-slate-800 box-outline text-slate-900 text-sm rounded-sm flex flex-col"
     style={style}
 >
 
-    <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3">
-        <div class="box-secondary">
+    <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
+        <div class="box-secondary flex-grow-0">
             <div class="uppercase box-outline text-center py-1.5">
                 {charDetails.name}
             </div>
@@ -82,19 +82,19 @@
             </div>
         </div>
 
-        <div class="box-outline box-primary h-fit flex items-center pl-2 gap-2">
+        <div class="box-outline box-primary h-fit flex items-center pl-2 gap-2 flex-grow">
             <img
-                class="w-10 h-16 object-contain"
+                class="w-10 h-16 object-contain flex-grow-0"
                 src={head}
                 alt="Male Grunt"
             >
-            <div class="italic text-xs py-1 pr-2 break-words">
+            <div class="italic text-xs py-1 pr-2 break-words flex-grow text-center">
                 “{charDetails.quote}”
             </div>
         </div>
     </div>
 
-    <div class="p-3 grid gap-2.5">
+    <div class="p-3 grid gap-2.5 flex-grow-0">
         {#each teamPokemon as mons, key}
             <TeamBox key={key + 1} mons={mons} primary={isRewardSlot(mons)} />
         {/each}
