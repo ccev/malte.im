@@ -2,8 +2,15 @@
     import "./box.css"
     import "./types.css"
     import TeamBox from "./TeamBox.svelte";
-    import {CHARACTER_MAP, Gender} from "../gruntData";
-    import type {Character, TeamPokemon, Reward} from "../@types/gruntApi";
+    import {CHARACTER_MAP, Gender} from "../gruntData"
+    import type {Character, TeamPokemon, Reward} from "../@types/gruntApi"
+
+    import head_4 from "$lib/images/heads/head_4.png";
+    import head_5 from "$lib/images/heads/head_5.png";
+    import head_41 from "$lib/images/heads/head_42.png";
+    import head_42 from "$lib/images/heads/head_43.png";
+    import head_43 from "$lib/images/heads/head_44.png";
+    import head_44 from "$lib/images/heads/head_45.png";
 
     export let char: Character
 
@@ -17,6 +24,19 @@
             quote: "...",
             gender: Gender.Female
         }
+    }
+
+    const heads = {
+        4: head_4,
+        5: head_5,
+        41: head_41,
+        42: head_42,
+        43: head_43,
+        44: head_44,
+    }
+    let head = heads[charDetails.gender]
+    if (!head) {
+        head = head_5
     }
 
     const cssId = charDetails.name.toLowerCase();
@@ -65,7 +85,7 @@
         <div class="box-outline box-primary h-fit flex items-center pl-2 gap-2">
             <img
                 class="w-10 h-16 object-contain"
-                src="https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/UICONS/invasion/{char.character.value}.png"
+                src={head}
                 alt="Male Grunt"
             >
             <div class="italic text-xs py-1 pr-2 break-words">
