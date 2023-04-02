@@ -65,7 +65,7 @@
         <div class="box-outline box-primary h-fit flex items-center pl-2 gap-2">
             <img
                 class="w-10 h-16 object-contain"
-                src="https://github.com/nileplumb/PkmnShuffleMap/blob/master/UICONS/invasion/{charDetails.gender}.png?raw=true"
+                src="https://raw.githubusercontent.com/nileplumb/PkmnShuffleMap/master/UICONS/invasion/{char.character.value}.png"
                 alt="Male Grunt"
             >
             <div class="italic text-xs py-1 pr-2 break-words">
