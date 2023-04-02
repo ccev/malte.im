@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 body {
-    --color-1: hsl(50, 98%, 72%);
-    --color-2: hsl(50, 98%, 89%);
+    --color-1: hsl(50, 98%, 93%);
+    --color-2: hsl(50, 98%, 98%);
 
     background: repeating-linear-gradient(
         45deg,
