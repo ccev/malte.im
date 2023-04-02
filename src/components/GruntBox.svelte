@@ -7,10 +7,10 @@
 
     import head_4 from "$lib/images/heads/head_4.png";
     import head_5 from "$lib/images/heads/head_5.png";
-    import head_41 from "$lib/images/heads/head_42.png";
-    import head_42 from "$lib/images/heads/head_43.png";
-    import head_43 from "$lib/images/heads/head_44.png";
-    import head_44 from "$lib/images/heads/head_45.png";
+    import head_41 from "$lib/images/heads/head_41.png";
+    import head_42 from "$lib/images/heads/head_42.png";
+    import head_43 from "$lib/images/heads/head_43.png";
+    import head_44 from "$lib/images/heads/head_44.png";
 
     export let char: Character
 
@@ -100,11 +100,4 @@
         {/each}
     </div>
 
-
 </div>
-
-<style>
-    .header {
-        background: var(--background);
-    }
-</style>

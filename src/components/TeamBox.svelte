@@ -6,9 +6,6 @@
     export let key: number
     export let mons: TeamPokemon[]
     export let primary: boolean = false
-    export let primaryColor: string = "yellow-300"
-    export let pokemonPrimaryColor: string = "green-400"
-    export let pokemonSecondaryColor: string = "green-300"
 </script>
 
 <div class="box-outline {primary ? 'reward-box' : 'normal-box'} p-2 flex items-center gap-3">
