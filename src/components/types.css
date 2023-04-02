@@ -1,0 +1,146 @@
+:root {
+    --bug-prim: hsl(83, 78%, 55%);
+    --bug-seco: hsl(83, 78%, 75%);
+    --bug-bg-1: hsl(94, 71%, 28%);
+    --bug-bg-2: hsl(94, 71%, 32%);
+
+    --dark-prim: hsl(261, 67%, 48%);
+    --dark-seco: hsl(261, 67%, 58%);
+    --dark-bg-1: hsl(257, 80%, 20%);
+    --dark-bg-2: hsl(257, 80%, 24%);
+
+    --dragon-prim: hsl(179, 90%, 40%);
+    --dragon-seco: hsl(179, 90%, 49%);
+    --dragon-bg-1: hsl(203, 95%, 30%);
+    --dragon-bg-2: hsl(203, 95%, 34%);
+
+    --fairy-prim: hsl(329, 92%, 74%);
+    --fairy-seco: hsl(329, 92%, 85%);
+    --fairy-bg-1: hsl(295, 86%, 44%);
+    --fairy-bg-2: hsl(295, 86%, 48%);
+
+    --fighting-prim: hsl(349, 81%, 55%);
+    --fighting-seco: hsl(349, 81%, 67%);
+    --fighting-bg-1: hsl(336, 85%, 35%);
+    --fighting-bg-2: hsl(336, 85%, 40%);
+
+    --fire-prim: hsl(17, 95%, 54%);
+    --fire-seco: hsl(17, 95%, 65%);
+    --fire-bg-1: hsl(7, 76%, 44%);
+    --fire-bg-2: hsl(7, 76%, 49%);
+
+    --flying-prim: hsl(193, 83%, 67%);
+    --flying-seco: hsl(193, 83%, 80%);
+    --flying-bg-1: hsl(183, 100%, 89%);
+    --flying-bg-2: hsl(183, 100%, 97%);
+
+    --grass-prim: hsl(127, 55%, 47%);
+    --grass-seco: hsl(127, 55%, 66%);
+    --grass-bg-1: hsl(109, 59%, 27%);
+    --grass-bg-2: hsl(109, 59%, 30%);
+
+    --ground-prim: hsl(23, 72%, 43%);
+    --ground-seco: hsl(23, 72%, 54%);
+    --ground-bg-1: hsl(14, 63%, 27%);
+    --ground-bg-2: hsl(14, 63%, 30%);
+
+    --ice-prim: hsl(180, 100%, 73%);
+    --ice-seco: hsl(180, 100%, 86%);
+    --ice-bg-1: hsl(189, 89%, 59%);
+    --ice-bg-2: hsl(189, 89%, 68%);
+
+    --steel-prim: hsl(213, 56%, 87%);
+    --steel-seco: hsl(213, 56%, 94%);
+    --steel-bg-1: hsl(208, 53%, 73%);
+    --steel-bg-2: hsl(208, 53%, 78%);
+
+    --normal-prim: hsl(210, 26%, 88%);
+    --normal-seco: hsl(210, 26%, 97%);
+    --normal-bg-1: hsl(213, 27%, 73%);
+    --normal-bg-2: hsl(213, 27%, 79%);
+
+    --poison-prim: hsl(304, 68%, 57%);
+    --poison-seco: hsl(304, 68%, 69%);
+    --poison-bg-1: hsl(308, 67%, 38%);
+    --poison-bg-2: hsl(308, 67%, 42%);
+
+    --psychic-prim: hsl(288, 88%, 76%);
+    --psychic-seco: hsl(288, 88%, 65%);
+    --psychic-bg-1: hsl(296, 74%, 32%);
+    --psychic-bg-2: hsl(296, 74%, 36%);
+
+    --water-prim: hsl(210, 86%, 66%);
+    --water-seco: hsl(210, 86%, 78%);
+    --water-bg-1: hsl(219, 73%, 52%);
+    --water-bg-2: hsl(219, 73%, 57%);
+
+    --rock-prim: hsl(36, 80%, 53%);
+    --rock-seco: hsl(36, 80%, 64%);
+    --rock-bg-1: hsl(24, 83%, 27%);
+    --rock-bg-2: hsl(24, 83%, 30%);
+
+    --ghost-prim: hsl(275, 92%, 51%);
+    --ghost-seco: hsl(275, 92%, 63%);
+    --ghost-bg-1: hsl(269, 84%, 27%);
+    --ghost-bg-2: hsl(269, 84%, 31%);
+
+    --electric-prim: hsl(43, 95%, 51%);
+    --electric-seco: hsl(43, 95%, 63%);
+    --electric-bg-1: hsl(34, 90%, 49%);
+    --electric-bg-2: hsl(34, 90%, 54%);
+}
+
+.header-default {
+    background: repeating-linear-gradient(
+            45deg,
+            var(--bg-color-1),         var(--bg-color-1) 30px,
+            var(--bg-color-2) 30px,    var(--bg-color-2) 50px );
+}
+
+/*.header-bug {*/
+/*    background-image: radial-gradient(*/
+/*                hsl(83, 87%, 38%) 2.2px, transparent 0.5px),*/
+/*            radial-gradient(*/
+/*                hsl(83, 87%, 38%) 2.2px, hsl(83, 87%, 33%) 0.5px);*/
+/*    background-size: 16px 16px;*/
+/*    background-position: 0 0, 8px 8px;*/
+/*}*/
+
+/*!* BIG shoutout to https://css-pattern.com/ *!*/
+
+/*.header-dark {*/
+/*    --s: 25px;*/
+/*    --c: hsl(261, 67%, 24%);*/
+/*    --c2: hsl(261, 67%, 17%);*/
+
+/*    --_g1:*/
+/*            var(--c)   calc(25%/3) ,#0000 0 calc(50%/3),*/
+/*            var(--c) 0 25%         ,#0000 0 75%,*/
+/*            var(--c) 0 calc(250%/3),#0000 0 calc(275%/3),*/
+/*            var(--c) 0;*/
+/*    --_g2:*/
+/*            #0000   calc(25%/3) ,var(--c) 0 calc(50%/3),*/
+/*            #0000 0 calc(250%/3),var(--c) 0 calc(275%/3),*/
+/*            #0000 0;*/
+/*    background:*/
+/*            linear-gradient( 45deg,var(--_g2)),*/
+/*            linear-gradient( 45deg,var(--_g1)),*/
+/*            linear-gradient(-45deg,var(--_g2)),*/
+/*            linear-gradient(-45deg,var(--_g1))*/
+/*            var(--c2);*/
+/*    background-position: 0 0,var(--s) var(--s);*/
+/*    background-size: calc(2*var(--s)) calc(2*var(--s));*/
+/*}*/
+
+/*.header-dragon {*/
+/*    --s: 9px; !* control the size (the circle diameter) *!*/
+/*    --c1: hsl(193, 84%, 41%);*/
+/*    --c2: hsl(179, 90%, 30%);*/
+
+/*    --_g: radial-gradient(calc(var(--s)/2),var(--c1) 97%,#0000);*/
+/*    background:*/
+/*            var(--_g),var(--_g) calc(2*var(--s)) calc(2*var(--s)),*/
+/*            repeating-conic-gradient(from 45deg,#0000 0 25%,var(--c2) 0 50%) calc(-.707*var(--s)) calc(-.707*var(--s)),*/
+/*            repeating-linear-gradient(135deg,var(--c1) calc(var(--s)/-2) calc(var(--s)/2),var(--c2) 0 calc(2.328*var(--s)));*/
+/*    background-size: calc(4*var(--s)) calc(4*var(--s));*/
+/*}*/
