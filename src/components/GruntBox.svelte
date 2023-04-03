@@ -2,7 +2,6 @@
     import "./box.css"
     import "./types.css"
     import TeamBox from "./TeamBox.svelte";
-    import {CHARACTER_MAP, Gender, Group} from "../gruntData"
     import type {TeamPokemon, DetailedCharacter} from "../@types/gruntApi"
 
     import head_4 from "$lib/images/heads/head_4.png";
@@ -72,48 +71,50 @@
 
 </script>
 
-<div
-    class="max-w-xs font-lexend divide-slate-900 divide-y-2 bg-slate-800 box-outline text-slate-900 text-sm rounded-sm flex flex-col"
-    style={style}
->
+<div class="w-full max-w-xs">
+    <div
+            class="w-full h-full font-lexend divide-slate-900 divide-y-2 bg-slate-800 box-outline text-slate-900 text-sm rounded-sm flex flex-col"
+            style={style}
+    >
 
-    <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
-        <div class="box-secondary flex-grow-0 group">
-            <div class="uppercase box-outline text-center py-1.5">
-                {char.details.name}
+        <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
+            <div class="box-secondary flex-grow-0 group">
+                <div class="uppercase box-outline text-center py-1.5">
+                    {char.details.name}
+                </div>
+                <div
+                        class="flex text-[0.7rem] mt-0.5 gap-0.5"
+                >
+                    <div class="box-outline px-2 py-1 group-hover:hidden">
+                        {oneIn}
+                    </div>
+                    <div class="box-outline px-2 py-1 group-hover:hidden">
+                        <!--                    #&#160;-->
+                        {formatHighNumberWithK(char.thisTotal)}
+                    </div>
+                    <div class="box-outline px-2 py-1 hidden group-hover:inline">
+                        {formatHighNumber(char.thisTotal)}&#160;/&#160;{formatHighNumber(char.groupTotal)}
+                    </div>
+                </div>
             </div>
-            <div
-                class="flex text-[0.7rem] mt-0.5 gap-0.5"
-            >
-                <div class="box-outline px-2 py-1 group-hover:hidden">
-                    {oneIn}
-                </div>
-                <div class="box-outline px-2 py-1 group-hover:hidden">
-<!--                    #&#160;-->
-                    {formatHighNumberWithK(char.thisTotal)}
-                </div>
-                <div class="box-outline px-2 py-1 hidden group-hover:inline">
-                    {formatHighNumber(char.thisTotal)}&#160;/&#160;{formatHighNumber(char.groupTotal)}
+
+            <div class="box-outline box-primary h-fit flex items-center pl-2 gap-2 flex-grow">
+                <img
+                        class="w-10 h-16 object-contain flex-grow-0"
+                        src={head}
+                        alt="Male Grunt"
+                >
+                <div class="italic text-xs py-1 pr-2 break-words flex-grow text-center">
+                    “{char.details.quote}”
                 </div>
             </div>
         </div>
 
-        <div class="box-outline box-primary h-fit flex items-center pl-2 gap-2 flex-grow">
-            <img
-                class="w-10 h-16 object-contain flex-grow-0"
-                src={head}
-                alt="Male Grunt"
-            >
-            <div class="italic text-xs py-1 pr-2 break-words flex-grow text-center">
-                “{char.details.quote}”
-            </div>
+        <div class="p-3 grid gap-2.5 flex-grow-0">
+            {#each teamPokemon as mons, key}
+                <TeamBox key={key + 1} mons={mons} primary={rewardSlots.has(key)} />
+            {/each}
         </div>
-    </div>
 
-    <div class="p-3 grid gap-2.5 flex-grow-0">
-        {#each teamPokemon as mons, key}
-            <TeamBox key={key + 1} mons={mons} primary={rewardSlots.has(key)} />
-        {/each}
     </div>
-
 </div>

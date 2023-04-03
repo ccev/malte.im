@@ -62,7 +62,8 @@ const QUOTES_DECOY = [
     QUOTE_DECOY_6,
     QUOTE_DECOY_7,
     QUOTE_DECOY_8,
-    QUOTE_DECOY_9
+    QUOTE_DECOY_9,
+    QUOTE_DECOY_10
 ]
 
 const QUOTE_GIOVANNI_1 = "I will not tolerate your interference."

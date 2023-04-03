@@ -32,7 +32,9 @@
     characters.forEach(char => char.groupTotal = counts.get(char.details.group))
 </script>
 
-<div class="m-auto max-w-5xl grid gap-3 place-items-center items-stretch justify-center min-[570px]:grid-cols-2 min-[860px]:grid-cols-3">
+<div
+    class="m-auto w-fit max-w-5xl grid gap-3 place-items-center items-stretch min-[570px]:grid-cols-2 min-[830px]:grid-cols-3"
+>
     {#each characters as char}
         <GruntBox char={char}/>
     {/each}
