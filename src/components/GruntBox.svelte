@@ -53,10 +53,14 @@
         let formatted = ""
         const numK = num / 1000
         if (numK >= 1) {
-            if (numK < 1.1 || numK >= 100) {
+            if (numK >= 100) {
                 formatted += numK.toFixed(0)
             } else {
                 formatted += numK.toFixed(1)
+
+                if (formatted.endsWith("0")) {
+                    formatted = formatted.slice(0, -2)
+                }
             }
         }
         formatted += "k"
@@ -83,12 +87,12 @@
                     {char.details.name}
                 </div>
                 <div
-                        class="flex text-[0.7rem] mt-0.5 gap-0.5"
+                        class="flex text-center text-[0.7rem] mt-0.5 gap-0.5"
                 >
-                    <div class="box-outline px-2 py-1 group-hover:hidden">
+                    <div class="basis-1/2 box-outline px-2 py-1 group-hover:hidden">
                         {oneIn}
                     </div>
-                    <div class="box-outline px-2 py-1 group-hover:hidden">
+                    <div class="basis-1/2 box-outline px-2 py-1 group-hover:hidden">
                         <!--                    #&#160;-->
                         {formatHighNumberWithK(char.thisTotal)}
                     </div>
