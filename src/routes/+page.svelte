@@ -1,12 +1,39 @@
 <script lang="ts">
     import GruntBox from "../components/GruntBox.svelte";
-    import type {ApiResponse} from "../@types/gruntApi";
+    import type {ApiResponse, DetailedCharacter} from "../@types/gruntApi";
+    import {Group, CHARACTER_MAP, Gender} from "../gruntData";
 
     export let data: ApiResponse
+
+    const characters: DetailedCharacter[] = []
+    const counts: Map<Group, number> = new Map<Group, number>()
+    data.characters.forEach(char => {
+        const charDetails = CHARACTER_MAP[char.character.value]
+
+        if (charDetails) {
+            let sum = 0
+            char.rewards.forEach(r => sum += r.total)
+
+            counts.set(charDetails.group, (counts.get(charDetails.group) || 0) + sum)
+
+            const detailedChar: DetailedCharacter = {
+                character: char.character,
+                rewards: char.rewards,
+                team: char.team,
+                details: charDetails,
+                thisTotal: sum,
+                groupTotal: 0
+            }
+            characters.push(detailedChar)
+        }
+    })
+    console.log(counts)
+
+    characters.forEach(char => char.groupTotal = counts.get(char.details.group))
 </script>
 
-<div class="m-auto max-w-5xl grid gap-3 place-items-start items-stretch min-[570px]:grid-cols-2 min-[860px]:grid-cols-3">
-    {#each data.characters as char}
+<div class="m-auto max-w-5xl grid gap-3 place-items-center items-stretch justify-center min-[570px]:grid-cols-2 min-[860px]:grid-cols-3">
+    {#each characters as char}
         <GruntBox char={char}/>
     {/each}
 </div>

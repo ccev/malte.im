@@ -81,14 +81,21 @@ export enum Gender {
     Giovanni = 44
 }
 
-interface Character {
+export enum Group {
+    Grunt = 0,
+    Leader = 1,
+    Giovanni = 2,
+}
+
+export interface CharacterDetails {
     name: string;
     quote: string;
     gender: Gender;
+    group: Group;
 }
 
 interface CharacterMap {
-    [key: number]: Character;
+    [key: number]: CharacterDetails;
 }
 
 function sample(arr: string[]) {
@@ -100,231 +107,277 @@ export const CHARACTER_MAP: CharacterMap = {
     4: {
         name: "Grunt",
         quote: sample(QUOTES_GENERIC),
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     5: {
         name: "Grunt",
         quote: sample(QUOTES_GENERIC),
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     6: {
         name: "Bug",
         quote: QUOTE_BUG,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     7: {
         name: "Bug",
         quote: QUOTE_BUG,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     8: {
         name: "Dark",
         quote: QUOTE_DARK,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     9: {
         name: "Dark",
         quote: QUOTE_DARK,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     10: {
         name: "Dark",
         quote: QUOTE_DARK,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     11: {
         name: "Dark",
         quote: QUOTE_DARK,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     12: {
         name: "Dragon",
         quote: QUOTE_DRAGON,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     13: {
         name: "Dragon",
         quote: QUOTE_DRAGON,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     14: {
         name: "Fairy",
         quote: QUOTE_FAIRY,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     15: {
         name: "Fairy",
         quote: QUOTE_FAIRY,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     16: {
         name: "Fighting",
         quote: QUOTE_FIGHTING,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     17: {
         name: "Fighting",
         quote: QUOTE_FIGHTING,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     18: {
         name: "Fire",
         quote: QUOTE_FIRE,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     19: {
         name: "Fire",
         quote: QUOTE_FIRE,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     20: {
         name: "Flying",
         quote: QUOTE_FLYING,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     21: {
         name: "Flying",
         quote: QUOTE_FLYING,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     22: {
         name: "Grass",
         quote: QUOTE_GRASS,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     23: {
         name: "Grass",
         quote: QUOTE_GRASS,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     24: {
         name: "Ground",
         quote: QUOTE_GROUND,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     25: {
         name: "Ground",
         quote: QUOTE_GROUND,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     26: {
         name: "Ice",
         quote: QUOTE_ICE,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     27: {
         name: "Ice",
         quote: QUOTE_ICE,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     28: {
         name: "Steel",
         quote: QUOTE_STEEL,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     29: {
         name: "Steel",
         quote: QUOTE_STEEL,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     30: {
         name: "Normal",
         quote: QUOTE_NORMAL,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     31: {
         name: "Normal",
         quote: QUOTE_NORMAL,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     32: {
         name: "Poison",
         quote: QUOTE_POISON,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     33: {
         name: "Poison",
         quote: QUOTE_POISON,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     34: {
         name: "Psychic",
         quote: QUOTE_PSYCHIC,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     35: {
         name: "Psychic",
         quote: QUOTE_PSYCHIC,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     36: {
         name: "Rock",
         quote: QUOTE_ROCK,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     37: {
         name: "Rock",
         quote: QUOTE_ROCK,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     38: {
         name: "Water",
         quote: QUOTE_WATER,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     39: {
         name: "Water",
         quote: QUOTE_WATER,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     41: {
         name: "Cliff",
         quote: sample(QUOTES_CLIFF),
-        gender: Gender.Cliff
+        gender: Gender.Cliff,
+        group: Group.Leader
     },
     42: {
         name: "Arlo",
         quote: sample(QUOTES_ARLO),
-        gender: Gender.Arlo
+        gender: Gender.Arlo,
+        group: Group.Leader
     },
     43: {
         name: "Sierra",
         quote: sample(QUOTES_SIERRA),
-        gender: Gender.Sierra
+        gender: Gender.Sierra,
+        group: Group.Leader
     },
     44: {
         name: "Giovanni",
         quote: sample(QUOTES_GIOVANNI),
-        gender: Gender.Giovanni
+        gender: Gender.Giovanni,
+        group: Group.Giovanni
     },
     45: {
         name: "Decoy",
         quote: sample(QUOTES_DECOY),
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Giovanni
     },
     46: {
         name: "Decoy",
         quote: sample(QUOTES_DECOY),
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Giovanni
     },
     47: {
         name: "Ghost",
         quote: QUOTE_GHOST,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     48: {
         name: "Ghost",
         quote: QUOTE_GHOST,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
     49: {
         name: "Electric",
         quote: QUOTE_ELECTRIC,
-        gender: Gender.Female
+        gender: Gender.Female,
+        group: Group.Grunt
     },
     50: {
         name: "Electric",
         quote: QUOTE_ELECTRIC,
-        gender: Gender.Male
+        gender: Gender.Male,
+        group: Group.Grunt
     },
 }

@@ -1,3 +1,5 @@
+import type {CharacterDetails} from "../gruntData";
+
 export interface Enum {
     value: number
     name: string
@@ -22,6 +24,15 @@ export interface Character {
     character: Enum
     rewards: Reward[]
     team: TeamPokemon[]
+}
+
+export interface DetailedCharacter {
+    character: Enum
+    rewards: Reward[]
+    team: TeamPokemon[]
+    details: CharacterDetails
+    thisTotal: number
+    groupTotal: number
 }
 
 export interface ApiResponse {

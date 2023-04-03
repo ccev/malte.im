@@ -2,8 +2,8 @@
     import "./box.css"
     import "./types.css"
     import TeamBox from "./TeamBox.svelte";
-    import {CHARACTER_MAP, Gender} from "../gruntData"
-    import type {Character, TeamPokemon, Reward} from "../@types/gruntApi"
+    import {CHARACTER_MAP, Gender, Group} from "../gruntData"
+    import type {TeamPokemon, DetailedCharacter} from "../@types/gruntApi"
 
     import head_4 from "$lib/images/heads/head_4.png";
     import head_5 from "$lib/images/heads/head_5.png";
@@ -12,19 +12,10 @@
     import head_43 from "$lib/images/heads/head_43.png";
     import head_44 from "$lib/images/heads/head_44.png";
 
-    export let char: Character
+    export let char: DetailedCharacter
 
     const teamPokemon: TeamPokemon[][] = [[], [], []]
     char.team.forEach(teamMon => teamPokemon[teamMon.slot].push(teamMon))
-
-    let charDetails = CHARACTER_MAP[char.character.value]
-    if (!charDetails) {
-        charDetails = {
-            name: "Unknown",
-            quote: "...",
-            gender: Gender.Female
-        }
-    }
 
     const heads = {
         4: head_4,
@@ -34,50 +25,75 @@
         43: head_43,
         44: head_44,
     }
-    let head = heads[charDetails.gender]
+    let head = heads[char.details.gender]
     if (!head) {
         head = head_5
     }
 
-    const cssId = charDetails.name.toLowerCase();
+    const cssId = char.details.name.toLowerCase();
     const style = `--primary: var(--${cssId}-prim, #94a3b8);
         --secondary: var(--${cssId}-seco, #e2e8f0);
         --background: var(--${cssId}-bg, var(--default-bg));
         --bg-color-1: var(--${cssId}-bg-1, hsl(215, 26%, 23%));
         --bg-color-2: var(--${cssId}-bg-2, hsl(217, 26%, 27%));`
 
-    function parsedPokemonId(mon: TeamPokemon | Reward) {
-        return "" + mon.pokemon.value + "|" + mon.form.value
-    }
-    const rewardPokemonIds = char.rewards.map(r => parsedPokemonId(r))
-
-    function isRewardSlot(mons: TeamPokemon[]) {
-        for (const mon of mons) {
-            if (!rewardPokemonIds.includes(parsedPokemonId(mon))) {
-                return false
+    const rewardSlots: Set<number> = new Set()
+    char.rewards.forEach(reward => {
+        for (const teamMon of char.team) {
+            if (teamMon.pokemon.value === reward.pokemon.value && teamMon.form.value === reward.form.value) {
+                rewardSlots.add(teamMon.slot)
+                break
             }
         }
-        return true
+    })
+    // function formatPercent(num: number) {
+    //     return (num * 100).toFixed(2)+"%"
+    // }
+
+    function formatHighNumberWithK(num: number) {
+        let formatted = ""
+        const numK = num / 1000
+        if (numK >= 1) {
+            if (numK < 1.1 || numK >= 100) {
+                formatted += numK.toFixed(0)
+            } else {
+                formatted += numK.toFixed(1)
+            }
+        }
+        formatted += "k"
+        return formatted
     }
+
+    function formatHighNumber(num: number) {
+        return num.toLocaleString("en-US")
+    }
+
+    const oneIn = "1:" + (char.groupTotal / char.thisTotal).toFixed(0)
 
 </script>
 
 <div
-    class="w-full max-w-xl font-lexend fit divide-slate-900 divide-y-2 bg-slate-800 box-outline text-slate-900 text-sm rounded-sm flex flex-col"
+    class="max-w-xs font-lexend divide-slate-900 divide-y-2 bg-slate-800 box-outline text-slate-900 text-sm rounded-sm flex flex-col"
     style={style}
 >
 
     <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
-        <div class="box-secondary flex-grow-0">
+        <div class="box-secondary flex-grow-0 group">
             <div class="uppercase box-outline text-center py-1.5">
-                {charDetails.name}
+                {char.details.name}
             </div>
-            <div class="flex text-[0.7rem] mt-0.5 gap-0.5">
-                <div class="box-outline px-2 py-1">
-                    12.78%
+            <div
+                class="flex text-[0.7rem] mt-0.5 gap-0.5"
+            >
+                <div class="box-outline px-2 py-1 group-hover:hidden">
+                    {oneIn}
                 </div>
-                <div class="box-outline px-2 py-1">
-                    7642
+                <div class="box-outline px-2 py-1 group-hover:hidden">
+<!--                    #&#160;-->
+                    {formatHighNumberWithK(char.thisTotal)}
+                </div>
+                <div class="box-outline px-2 py-1 hidden group-hover:inline">
+                    {formatHighNumber(char.thisTotal)}&#160;/&#160;{formatHighNumber(char.groupTotal)}
                 </div>
             </div>
         </div>
@@ -89,14 +105,14 @@
                 alt="Male Grunt"
             >
             <div class="italic text-xs py-1 pr-2 break-words flex-grow text-center">
-                “{charDetails.quote}”
+                “{char.details.quote}”
             </div>
         </div>
     </div>
 
     <div class="p-3 grid gap-2.5 flex-grow-0">
         {#each teamPokemon as mons, key}
-            <TeamBox key={key + 1} mons={mons} primary={isRewardSlot(mons)} />
+            <TeamBox key={key + 1} mons={mons} primary={rewardSlots.has(key)} />
         {/each}
     </div>
 
