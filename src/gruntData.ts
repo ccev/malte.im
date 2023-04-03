@@ -83,9 +83,9 @@ export enum Gender {
 }
 
 export enum Group {
-    Grunt = 0,
-    Leader = 1,
+    Leader = 0,
     Giovanni = 2,
+    Grunt = 3,
 }
 
 export interface CharacterDetails {

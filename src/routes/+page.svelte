@@ -27,9 +27,10 @@
             characters.push(detailedChar)
         }
     })
-    console.log(counts)
 
     characters.forEach(char => char.groupTotal = counts.get(char.details.group))
+    characters.sort((a, b) => a.details.name.localeCompare(b.details.name))
+    characters.sort((a, b) => a.details.group - b.details.group)
 </script>
 
 <div
