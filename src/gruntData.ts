@@ -106,13 +106,13 @@ function sample(arr: string[]) {
 
 export const CHARACTER_MAP: CharacterMap = {
     4: {
-        name: "Grunt",
+        name: "Typeless",
         quote: sample(QUOTES_GENERIC),
         gender: Gender.Male,
         group: Group.Grunt
     },
     5: {
-        name: "Grunt",
+        name: "Typeless",
         quote: sample(QUOTES_GENERIC),
         gender: Gender.Female,
         group: Group.Grunt
