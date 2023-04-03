@@ -73,8 +73,8 @@
 
 <div class="w-full max-w-xs">
     <div
-            class="w-full h-full font-lexend divide-slate-900 divide-y-2 bg-slate-800 box-outline text-slate-900 text-sm rounded-sm flex flex-col"
-            style={style}
+        class="w-full h-full font-lexend divide-slate-900 divide-y-2 bg-slate-800 box-outline text-slate-900 text-sm rounded-sm flex flex-col"
+        style={style}
     >
 
         <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
