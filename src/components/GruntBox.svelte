@@ -2,6 +2,7 @@
     import "./box.css"
     import "./types.css"
     import TeamBox from "./TeamBox.svelte";
+    import formatHighNumberWithK from "../utils"
     import type {TeamPokemon, DetailedCharacter} from "../@types/gruntApi"
 
     import head_4 from "$lib/images/heads/head_4.png";
@@ -48,24 +49,6 @@
     // function formatPercent(num: number) {
     //     return (num * 100).toFixed(2)+"%"
     // }
-
-    function formatHighNumberWithK(num: number) {
-        let formatted = ""
-        const numK = num / 1000
-        if (numK >= 1) {
-            if (numK >= 100) {
-                formatted += numK.toFixed(0)
-            } else {
-                formatted += numK.toFixed(1)
-
-                if (formatted.endsWith("0")) {
-                    formatted = formatted.slice(0, -2)
-                }
-            }
-        }
-        formatted += "k"
-        return formatted
-    }
 
     function formatHighNumber(num: number) {
         return num.toLocaleString("en-US")
@@ -116,7 +99,15 @@
 
         <div class="p-3 grid gap-2.5 flex-grow-0">
             {#each teamPokemon as mons, key}
-                <TeamBox key={key + 1} mons={mons} primary={rewardSlots.has(key)} />
+                <TeamBox
+                    key={key + 1}
+                    mons={mons}
+                    totalGrunt={char.thisTotal}
+                    totalReward={char.rewardTotal}
+                    rewards={char.rewards}
+                    primary={rewardSlots.has(key)}
+                    multipleSlotRewards={rewardSlots.size > 1}
+                />
             {/each}
         </div>
 

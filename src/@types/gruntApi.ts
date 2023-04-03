@@ -32,6 +32,7 @@ export interface DetailedCharacter {
     team: TeamPokemon[]
     details: CharacterDetails
     thisTotal: number
+    rewardTotal: number
     groupTotal: number
 }
 

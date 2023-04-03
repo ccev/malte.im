@@ -12,7 +12,14 @@
 
         if (charDetails) {
             let sum = 0
-            char.rewards.forEach(r => sum += r.total)
+            char.team.forEach(t => {
+                if (t.slot === 0) {
+                    sum += t.total
+                }
+            })
+
+            let rewardTotal = 0
+            char.rewards.forEach(r => rewardTotal += r.total)
 
             counts.set(charDetails.group, (counts.get(charDetails.group) || 0) + sum)
 
@@ -22,6 +29,7 @@
                 team: char.team,
                 details: charDetails,
                 thisTotal: sum,
+                rewardTotal: rewardTotal,
                 groupTotal: 0
             }
             characters.push(detailedChar)
