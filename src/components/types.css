@@ -1,16 +1,16 @@
 :root {
     --bug-prim: hsl(83, 78%, 55%);
-    --bug-seco: hsl(83, 78%, 75%);
-    --bug-bg-1: hsl(94, 71%, 28%);
-    --bug-bg-2: hsl(94, 71%, 32%);
+    --bug-seco: hsl(83, 78%, 70%);
+    --bug-bg-1: hsl(94, 71%, 35%);
+    --bug-bg-2: hsl(94, 71%, 38%);
 
-    --dark-prim: hsl(261, 67%, 48%);
-    --dark-seco: hsl(261, 67%, 58%);
-    --dark-bg-1: hsl(257, 80%, 20%);
-    --dark-bg-2: hsl(257, 80%, 24%);
+    --dark-prim: hsl(261, 67%, 61%);
+    --dark-seco: hsl(261, 67%, 69%);
+    --dark-bg-1: hsl(257, 80%, 28%);
+    --dark-bg-2: hsl(257, 80%, 34%);
 
     --dragon-prim: hsl(179, 90%, 40%);
-    --dragon-seco: hsl(179, 90%, 49%);
+    --dragon-seco: hsl(179, 90%, 47%);
     --dragon-bg-1: hsl(203, 95%, 30%);
     --dragon-bg-2: hsl(203, 95%, 34%);
 
@@ -39,8 +39,8 @@
     --grass-bg-1: hsl(109, 59%, 27%);
     --grass-bg-2: hsl(109, 59%, 30%);
 
-    --ground-prim: hsl(23, 72%, 43%);
-    --ground-seco: hsl(23, 72%, 54%);
+    --ground-prim: hsl(26, 72%, 46%);
+    --ground-seco: hsl(26, 72%, 55%);
     --ground-bg-1: hsl(14, 63%, 27%);
     --ground-bg-2: hsl(14, 63%, 30%);
 
@@ -79,15 +79,30 @@
     --rock-bg-1: hsl(24, 83%, 27%);
     --rock-bg-2: hsl(24, 83%, 30%);
 
-    --ghost-prim: hsl(275, 92%, 51%);
-    --ghost-seco: hsl(275, 92%, 63%);
-    --ghost-bg-1: hsl(269, 84%, 27%);
-    --ghost-bg-2: hsl(269, 84%, 31%);
+    --ghost-prim: hsl(275, 92%, 61%);
+    --ghost-seco: hsl(275, 92%, 73%);
+    --ghost-bg-1: hsl(269, 84%, 35%);
+    --ghost-bg-2: hsl(269, 84%, 41%);
 
     --electric-prim: hsl(43, 95%, 51%);
     --electric-seco: hsl(43, 95%, 63%);
     --electric-bg-1: hsl(34, 90%, 49%);
     --electric-bg-2: hsl(34, 90%, 54%);
+
+    --arlo-prim: hsl(359, 84%, 58%);
+    --arlo-seco: hsl(359, 84%, 66%);
+    --arlo-bg-1: hsl(346, 82%, 33%);
+    --arlo-bg-2: hsl(346, 82%, 37%);
+
+    --cliff-prim: hsl(227, 80%, 64%);
+    --cliff-seco: hsl(227, 80%, 73%);
+    --cliff-bg-1: hsl(234, 60%, 46%);
+    --cliff-bg-2: hsl(234, 60%, 52%);
+
+    --sierra-prim: hsl(55, 83%, 63%);
+    --sierra-seco: hsl(55, 83%, 71%);
+    --sierra-bg-1: hsl(49, 86%, 58%);
+    --sierra-bg-2: hsl(49, 86%, 68%);
 }
 
 .header-default {
