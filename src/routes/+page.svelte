@@ -47,7 +47,10 @@
 </script>
 
 <div
-    class="m-auto w-fit max-w-5xl grid gap-y-4 gap-x-3.5 place-items-center items-stretch min-[570px]:grid-cols-2 min-[830px]:grid-cols-3"
+    class="
+        m-auto w-fit max-w-5xl grid gap-2.5 place-items-center
+        items-stretch min-[570px]:grid-cols-2 min-[830px]:grid-cols-3
+        min-[830px]:gap-3.5"
 >
     {#each characters as char}
         <GruntBox char={char}/>

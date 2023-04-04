@@ -66,7 +66,7 @@
 
         <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
             <div class="box-secondary flex-grow-0 group">
-                <div class="uppercase box-outline text-center py-1.5">
+                <div class="uppercase box-outline text-center py-1.5 px-2">
                     {char.details.name}
                 </div>
                 <div
@@ -79,7 +79,7 @@
                         <!--                    #&#160;-->
                         {formatHighNumberWithK(char.thisTotal)}
                     </div>
-                    <div class="box-outline px-2 py-1 hidden group-hover:inline">
+                    <div class="box-outline basis-full px-2 py-1 hidden group-hover:inline">
                         {formatHighNumber(char.thisTotal)}&#160;/&#160;{formatHighNumber(char.groupTotal)}
                     </div>
                 </div>
