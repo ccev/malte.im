@@ -36,8 +36,13 @@
         }
     })
 
+    function anyShiny(char: DetailedCharacter) {
+        return char.rewards.some(r => r.shinies > 0) ? 0 : 1
+    }
+
     characters.forEach(char => char.groupTotal = counts.get(char.details.group))
     characters.sort((a, b) => a.details.name.localeCompare(b.details.name))
+    characters.sort((a, b) => anyShiny(a) - anyShiny(b));
     characters.sort((a, b) => a.details.group - b.details.group)
 </script>
 
