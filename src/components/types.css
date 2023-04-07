@@ -4,10 +4,10 @@
     --bug-bg-1: hsl(94, 71%, 35%);
     --bug-bg-2: hsl(94, 71%, 38%);
 
-    --dark-prim: hsl(261, 67%, 61%);
-    --dark-seco: hsl(261, 67%, 69%);
-    --dark-bg-1: hsl(257, 80%, 28%);
-    --dark-bg-2: hsl(257, 80%, 34%);
+    --dark-prim: hsl(261, 83%, 67%);
+    --dark-seco: hsl(261, 83%, 76%);
+    --dark-bg-1: hsl(268, 80%, 28%);
+    --dark-bg-2: hsl(268, 80%, 34%);
 
     --dragon-prim: hsl(179, 90%, 40%);
     --dragon-seco: hsl(179, 90%, 47%);
@@ -19,8 +19,8 @@
     --fairy-bg-1: hsl(295, 86%, 44%);
     --fairy-bg-2: hsl(295, 86%, 48%);
 
-    --fighting-prim: hsl(349, 81%, 55%);
-    --fighting-seco: hsl(349, 81%, 67%);
+    --fighting-prim: hsl(349, 81%, 60%);
+    --fighting-seco: hsl(349, 81%, 69%);
     --fighting-bg-1: hsl(336, 85%, 35%);
     --fighting-bg-2: hsl(336, 85%, 40%);
 
@@ -79,10 +79,10 @@
     --rock-bg-1: hsl(24, 83%, 27%);
     --rock-bg-2: hsl(24, 83%, 30%);
 
-    --ghost-prim: hsl(275, 92%, 61%);
-    --ghost-seco: hsl(275, 92%, 73%);
-    --ghost-bg-1: hsl(269, 84%, 35%);
-    --ghost-bg-2: hsl(269, 84%, 41%);
+    --ghost-prim: hsl(275, 92%, 66%);
+    --ghost-seco: hsl(275, 92%, 78%);
+    --ghost-bg-1: hsl(268, 84%, 38%);
+    --ghost-bg-2: hsl(268, 84%, 44%);
 
     --electric-prim: hsl(43, 95%, 51%);
     --electric-seco: hsl(43, 95%, 63%);
