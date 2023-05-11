@@ -10,6 +10,8 @@ body {
         45deg,
         var(--color-1),         var(--color-1) 60px,
         var(--color-2) 60px,    var(--color-2) 70px );
+
+    @apply font-lexend text-slate-900 text-sm
 }
 
 @layer base {
