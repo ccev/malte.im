@@ -22,26 +22,26 @@
 
 {#if showMotd}
     <div class="w-full bg-slate-50 box-outline rounded-sm col-span-full flex divide-x-2 divide-slate-900">
-        <p class="w-full h-full p-4">
         <a
-                class="block max-w-3xl mx-auto"
+                class="block h-full w-full p-4"
                 href={DISCORD}
         >
-            Hey! This page provides you with the latest information on Team Rocket Grunts.
-            The data is automatically gathered within the last 24 hours.
-            <br/>
-            I'm actively working on adding more features to make this resource even better.
-            If you like to follow along, feel free to join my Discord server by
-            <a
-                    class="text-blue-400 underline visited:text-purple-400"
-                    href={DISCORD}>
-                clicking here</a>.
+            <p class="max-w-3xl mx-auto">
+                Hey! This page provides you with the latest information on Team Rocket Grunts.
+                The data is automatically gathered within the last 24 hours.
+                <br/>
+                I'm actively working on adding more features to make this resource even better.
+                If you like to follow along, feel free to join my Discord server by
+                <a
+                        class="text-blue-400 underline visited:text-purple-400"
+                        href={DISCORD}>
+                    clicking here</a>.
 
-            <br />
-            Thank you for visiting, and I hope you find this page helpful!
+                <br />
+                Thank you for visiting, and I hope you find this page helpful!
+            </p>
         </a>
-        </p>
-
+        
         <button
             class="flex items-center justify-center p-4 stroke-slate-900"
             on:click={hideMotd}
