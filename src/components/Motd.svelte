@@ -41,7 +41,7 @@
                 Thank you for visiting, and I hope you find this page helpful!
             </p>
         </a>
-        
+
         <button
             class="flex items-center justify-center p-4 stroke-slate-900"
             on:click={hideMotd}
