@@ -3,6 +3,8 @@
     import type {ApiResponse, DetailedCharacter} from "../@types/gruntApi";
     import {Group, CHARACTER_MAP, Gender} from "../gruntData";
     import Motd from "../components/Motd.svelte";
+    import Hamburger from "../components/Menu.svelte";
+    import { _ } from "svelte-i18n"
 
     export let data: ApiResponse
 
@@ -47,9 +49,17 @@
     characters.sort((a, b) => a.details.group - b.details.group)
 </script>
 
-<div class="mx-auto w-fit max-w-5xl grid gap-2.5 place-items-center items-stretch min-[570px]:grid-cols-2 min-[830px]:grid-cols-3 min-[830px]:gap-3.5">
-    <Motd />
-    {#each characters as char}
-        <GruntBox char={char}/>
-    {/each}
+<div class="relative max-w-[69.5rem] mx-auto">
+    <div class="absolute top-0">
+        <Hamburger />
+    </div>
+    <div class="mx-auto w-fit max-w-5xl grid gap-2.5 place-items-center items-stretch min-[570px]:grid-cols-2 min-[830px]:grid-cols-3 min-[830px]:gap-3.5">
+        <Motd />
+        {#each characters as char}
+            <GruntBox char={char}/>
+        {/each}
+    </div>
+
 </div>
+
+

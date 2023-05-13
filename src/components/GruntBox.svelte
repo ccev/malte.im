@@ -1,8 +1,9 @@
 <script lang="ts">
-    import "./box.css"
-    import "./types.css"
+    import "../styles/box.css"
+    import "../styles/types.css"
     import TeamBox from "./TeamBox.svelte";
     import formatHighNumberWithK from "../utils"
+    import { _, locale } from "svelte-i18n"
     import type {TeamPokemon, DetailedCharacter} from "../@types/gruntApi"
 
     import head_4 from "$lib/images/heads/head_4.png";
@@ -56,6 +57,25 @@
 
     const oneIn = "1:" + (char.groupTotal / char.thisTotal).toFixed(0)
 
+    let quote: string
+    const quoteKey = `grunt_quotes.${char.character.value}`
+    let currentQuoteIndex = 1
+    locale.subscribe(() => {
+        if (char.details.quotes == 1) {
+            quote = $_(quoteKey)
+        } else {
+            quote = $_(`${quoteKey}_${currentQuoteIndex}`)
+        }
+    })
+
+    function cycleQuote() {
+        if (char.details.quotes == 1) {
+            return
+        }
+        currentQuoteIndex = currentQuoteIndex % char.details.quotes + 1
+        quote = $_(`${quoteKey}_${currentQuoteIndex}`)
+    }
+
 </script>
 
 <div class="w-full h-full max-w-xs">
@@ -67,7 +87,7 @@
         <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
             <div class="box-secondary flex-grow-0 group">
                 <div class="uppercase box-outline text-center py-1.5 px-2">
-                    {char.details.name}
+                    {$_(`grunt_names.${char.character.value}`)}
                 </div>
                 <div
                         class="flex text-center text-[0.7rem] mt-0.5 gap-0.5"
@@ -85,15 +105,18 @@
                 </div>
             </div>
 
-            <div class="box-outline box-primary h-fit flex items-center pl-2 gap-2 flex-grow">
+            <div
+                on:mouseenter={cycleQuote}
+                class="box-outline box-primary h-fit flex items-center pl-2 gap-2 flex-grow"
+            >
                 <img
                         class="w-10 h-16 object-contain flex-grow-0"
                         src={head}
                         alt="Male Grunt"
                 >
-                <div class="italic text-xs py-1 pr-2 break-words flex-grow text-center">
-                    “{char.details.quote}”
-                </div>
+                <p class="italic text-xs py-1 pr-2 break-words flex-grow text-center">
+                    “{quote}”
+                </p>
             </div>
         </div>
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import "./box.css"
+    import "../styles/box.css"
     import PokemonBox from "./PokemonBox.svelte"
     import type {TeamPokemon, Reward} from "../@types/gruntApi";
 

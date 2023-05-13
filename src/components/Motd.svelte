@@ -1,6 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
-    import "./box.css"
+    import "../styles/box.css"
 
     const DISCORD = "https://discord.gg/akNbA6v8Ug"
     const CURRENT_MOTD = "discord1"

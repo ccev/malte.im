@@ -1,5 +1,5 @@
 <script lang="ts">
-    import "./box.css"
+    import "../styles/box.css"
     import type {TeamPokemon, Reward} from "../@types/gruntApi";
     import Sparkle from "./Sparkle.svelte";
     import formatHighNumberWithK from "../utils"
