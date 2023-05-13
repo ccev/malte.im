@@ -33,7 +33,7 @@
                 I'm actively working on adding more features to make this resource even better.
                 If you like to follow along, feel free to join my Discord server by
                 <a
-                        class="text-blue-400 underline visited:text-purple-400"
+                        class="text-blue-600 underline visited:text-purple-600"
                         href={DISCORD}>
                     clicking here</a>.
 
@@ -44,6 +44,7 @@
 
         <button
             class="flex items-center justify-center p-4 stroke-slate-900"
+            title="Close Note"
             on:click={hideMotd}
         >
             <svg
