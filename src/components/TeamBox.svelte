@@ -25,7 +25,7 @@
 
 <div class="box-outline {primary ? 'reward-box' : 'normal-box'} p-2 flex items-center gap-3">
 
-    <div class="{primary ? 'reward-number' : 'normal-number'} flex-auto flex justify-center font-poppins text-outline text-4xl">
+    <div class="{primary ? 'reward-number' : 'normal-number'} flex-auto flex justify-center font-poppins italic text-outline text-4xl">
         {key}
     </div>
 
