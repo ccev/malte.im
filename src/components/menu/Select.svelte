@@ -40,7 +40,7 @@
         <button
             on:click={closeDropdown}
             on:scroll={closeDropdown}
-            class="fixed w-full h-full left-0 top-0"
+            class="fixed w-full h-full left-0 top-0 cursor-default"
         ></button>
         <div
             in:scale={{duration: 60}}
