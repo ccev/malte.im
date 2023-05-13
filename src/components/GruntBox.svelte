@@ -107,6 +107,7 @@
 
             <div
                 on:mouseenter={cycleQuote}
+                on:click={cycleQuote}
                 class="box-outline box-primary h-fit flex items-center pl-2 gap-2 flex-grow"
             >
                 <img
