@@ -1,8 +1,7 @@
 import type {ApiResponse} from "../@types/gruntApi";
+import {gruntEndpoint} from "$lib/api";
 
-export async function load(): Promise<ApiResponse> {
-    const response = await fetch("https://rocket.malte.im/api/characters")
+export async function load({ fetch, params }): Promise<ApiResponse> {
+    const response = await fetch(gruntEndpoint)
     return response.json()
 }
-
-// export type { ApiResponse, Character, TeamPokemon, Enum, Reward }

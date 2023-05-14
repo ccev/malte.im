@@ -14,7 +14,7 @@
 
     interface Option {
         label: string;
-        value: string;
+        value: any;
     }
 
     function closeDropdown() {

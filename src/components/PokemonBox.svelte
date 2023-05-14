@@ -18,9 +18,12 @@
     }
 
     let oneIn = ""
-    if (reward) {
-        oneIn = "1:" + (reward.total / reward.shinies).toFixed(0)
+    $: {
+        if (reward) {
+            oneIn = "1:" + (reward.total / reward.shinies).toFixed(0)
+        }
     }
+
 </script>
 
 <div class="group box-outline text-slate-900">

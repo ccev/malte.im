@@ -15,8 +15,26 @@
 
     export let char: DetailedCharacter
 
-    const teamPokemon: TeamPokemon[][] = [[], [], []]
-    char.team.forEach(teamMon => teamPokemon[teamMon.slot].push(teamMon))
+    let teamPokemon: TeamPokemon[][] = [[], [], []]
+    let rewardSlots: Set<number> = new Set()
+    let oneIn: string
+
+    $: {
+        teamPokemon = [[], [], []]
+        char.team.forEach(teamMon => teamPokemon[teamMon.slot].push(teamMon))
+
+        rewardSlots.clear()
+        char.rewards.forEach(reward => {
+            for (const teamMon of char.team) {
+                if (teamMon.pokemon.value === reward.pokemon.value && teamMon.form.value === reward.form.value) {
+                    rewardSlots.add(teamMon.slot)
+                    break
+                }
+            }
+        })
+
+        oneIn = "1:" + (char.groupTotal / char.thisTotal).toFixed(0)
+    }
 
     const heads = {
         4: head_4,
@@ -38,15 +56,7 @@
         --bg-color-1: var(--${cssId}-bg-1, hsl(215, 26%, 23%));
         --bg-color-2: var(--${cssId}-bg-2, hsl(217, 26%, 27%));`
 
-    const rewardSlots: Set<number> = new Set()
-    char.rewards.forEach(reward => {
-        for (const teamMon of char.team) {
-            if (teamMon.pokemon.value === reward.pokemon.value && teamMon.form.value === reward.form.value) {
-                rewardSlots.add(teamMon.slot)
-                break
-            }
-        }
-    })
+
     // function formatPercent(num: number) {
     //     return (num * 100).toFixed(2)+"%"
     // }
@@ -54,8 +64,6 @@
     function formatHighNumber(num: number) {
         return num.toLocaleString("en-US")
     }
-
-    const oneIn = "1:" + (char.groupTotal / char.thisTotal).toFixed(0)
 
     let quote: string
     const quoteKey = `grunt_quotes.${char.character.value}`
