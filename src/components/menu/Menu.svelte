@@ -33,7 +33,7 @@
     <div class="flex flex-col-reverse gap-3 min-[1145px]:flex-col">
         <Select
             options={languageOptions}
-            defaultOption={$locale.toUpperCase()}
+            defaultOption={$locale?.toUpperCase()}
             title="Language"
             on:select={(event) => changeLocalLocale(event.detail.value)}
         />
