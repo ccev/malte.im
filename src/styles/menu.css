@@ -7,7 +7,7 @@
 }
 
 .button {
-    @apply bg-slate-50 w-12 aspect-square text-center;
+    @apply bg-slate-50 w-16 aspect-square text-center min-[1145px]:w-12;
     box-shadow: var(--shadow);
 }
 

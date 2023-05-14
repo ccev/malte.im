@@ -85,7 +85,7 @@
     >
 
         <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
-            <div class="box-secondary flex-grow-0 group">
+            <div class="box-secondary flex-none group">
                 <div class="uppercase box-outline text-center py-1.5 px-2">
                     {$_(`grunt_names.${char.character.value}`)}
                 </div>
@@ -108,14 +108,15 @@
             <div
                 on:mouseenter={cycleQuote}
                 on:click={cycleQuote}
-                class="box-outline box-primary h-fit flex items-center pl-2 gap-2 flex-grow"
+                class="box-outline box-primary h-fit items-center pl-2 gap-2 grid w-full"
+                style="grid-template-columns: 2.5rem minmax(0, 1fr);"
             >
                 <img
-                        class="w-10 h-16 object-contain flex-grow-0"
+                        class="h-16 object-contain"
                         src={head}
                         alt="Male Grunt"
                 >
-                <p class="italic text-xs py-1 pr-2 break-words flex-grow text-center">
+                <p class="italic text-xs py-1 pr-2 text-center break-words">
                     “{quote}”
                 </p>
             </div>
