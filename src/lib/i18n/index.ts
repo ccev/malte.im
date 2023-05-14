@@ -26,7 +26,7 @@ Object.keys(LANGUAGES).forEach(langCode => {
     register(langCode, () => import(`./locales/${langCode}.json`))
 })
 
-let initialLocale = defaultLocale
+let initialLocale: string | null = null
 if (browser) {
     let browserLang = normalizeLocaleKey(window.navigator.language)
     if (browserLang) {
@@ -59,10 +59,6 @@ export function changeLocalLocale(newLanguage: string) {
     }
     locale.set(newLanguage)
     localStorage.setItem(LANG_KEY, newLanguage)
-}
-
-if (!initialLocale) {
-    initialLocale = defaultLocale
 }
 
 init({

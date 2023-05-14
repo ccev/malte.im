@@ -94,7 +94,7 @@
 
         <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
             <div class="box-secondary box-outline flex-none group divide-slate-900 divide-y-2">
-                <div class="uppercase text-center py-1.5 px-2">
+                <div class="uppercase text-center py-1.5 px-3">
                     {$_(`grunt_names.${char.character.value}`)}
                 </div>
                 <div
