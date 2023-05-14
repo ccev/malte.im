@@ -93,23 +93,23 @@
     >
 
         <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
-            <div class="box-secondary flex-none group">
-                <div class="uppercase box-outline text-center py-1.5 px-2">
+            <div class="box-secondary box-outline flex-none group divide-slate-900 divide-y-2">
+                <div class="uppercase text-center py-1.5 px-2">
                     {$_(`grunt_names.${char.character.value}`)}
                 </div>
                 <div
-                        class="flex text-center text-[0.7rem] mt-0.5 gap-0.5"
+                    class="grid grid-cols-2 divide-slate-900 divide-x-2 text-center text-[0.7rem] group-hover:hidden"
                 >
-                    <div class="basis-1/2 box-outline px-2 py-1 group-hover:hidden">
+                    <div class="px-1.5 py-1">
                         {oneIn}
                     </div>
-                    <div class="basis-1/2 box-outline px-2 py-1 group-hover:hidden">
-                        <!--                    #&#160;-->
+                    <div class="px-1.5 py-1">
                         {formatHighNumberWithK(char.thisTotal)}
                     </div>
-                    <div class="box-outline basis-full px-2 py-1 hidden group-hover:inline">
-                        {formatHighNumber(char.thisTotal)}&#160;/&#160;{formatHighNumber(char.groupTotal)}
-                    </div>
+                </div>
+
+                <div class="basis-full px-2 py-1 text-center text-[0.7rem] hidden group-hover:block">
+                    {formatHighNumber(char.thisTotal)}&#160;/&#160;{formatHighNumber(char.groupTotal)}
                 </div>
             </div>
 
