@@ -1,7 +1,5 @@
 import { browser } from '$app/environment'
 import { init, register, locale } from 'svelte-i18n'
-import {compute_rest_props} from "svelte/internal";
-import {onMount} from "svelte";
 
 export const LANGUAGES = {
     "en": "English",
