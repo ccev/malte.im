@@ -61,6 +61,9 @@ export function changeLocalLocale(newLanguage: string) {
     localStorage.setItem(LANG_KEY, newLanguage)
 }
 
+if (!initialLocale) {
+    initialLocale = defaultLocale
+}
 
 init({
     fallbackLocale: defaultLocale,
