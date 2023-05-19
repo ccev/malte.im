@@ -1,10 +1,9 @@
 <script lang="ts">
-    import '../../styles/box.css'
-    import '../../styles/menu.css'
+    import './menu.css'
     import {changeLocalLocale, LANGUAGES} from "$lib/i18n";
     import {locale} from "svelte-i18n";
     import Select from "./Select.svelte";
-    import { createEventDispatcher } from 'svelte';
+    import {createEventDispatcher} from 'svelte';
 
     const dispatch = createEventDispatcher();
     interface Timeframe {

@@ -1,7 +1,7 @@
 <script lang="ts">
-    import "../styles/box.css"
-    import type {TeamPokemon, Reward} from "../@types/gruntApi";
+    import type {Reward, TeamPokemon} from "../@types/gruntApi";
     import Sparkle from "./Sparkle.svelte";
+    import Box from "./design/Box.svelte";
     import formatHighNumberWithK from "../utils"
 
     export let pokemon: TeamPokemon
@@ -24,11 +24,30 @@
         }
     }
 
+    // function slide(node: HTMLDivElement, initialWidth: number) {
+    //     const initialScale = initialWidth / node.clientWidth
+    //     return {
+    //         easing: sineIn,
+    //         duration: 100,
+    //         css: (t) => {
+    //             const scale = initialScale + t * (1 - initialScale)
+    //             const width = node.clientWidth * scale
+    //             return `
+    //                 width: ${width}px;
+    //             `
+    //         }
+    //     }
+    // }
+
 </script>
 
-<div class="group box-outline text-slate-900">
-    <div class="box-secondary hidden h-14 w-fit text-xs px-0.5 justify-center group-hover:flex">
-        <p class="my-auto">
+<Box class="cont group text-slate-900 min-w-[3.5rem] h-full flex-none"
+>
+    <div
+            class="bg-[var(--secondary)] text-xs px-0.5 items-center overflow-hidden h-0 min-w-full max-w-[3.5rem] group-hover:max-w-[8rem] group-hover:flex group-hover:h-full"
+            style="transition: max-width 200ms;"
+    >
+        <p>
             {#if reward && reward.shinies > 0}
                 Shiny:&#160;{formatHighNumberWithK(reward.shinies)}<br>
             {/if}
@@ -38,36 +57,24 @@
             Team:&#160;{formatHighNumberWithK(pokemon.total)}
         </p>
     </div>
-    <div class="box-primary h-14 aspect-square relative group-hover:hidden">
+
+    <div
+            class="bg-[var(--primary)] w-full h-full aspect-square relative group-hover:hidden"
+    >
         <img
-                class="h-10 w-10 top-1.5 left-2 object-contain absolute"
+                class="h-10 w-10 top-1.5 left-0 right-0 mx-auto object-contain absolute"
                 src="https://raw.githubusercontent.com/xxleevo/monicons/master/classic/pokemon_icon_{formattedMonId}_{formattedFormId}.png"
                 alt={pokemon.pokemon.name}
         >
 
-        <div class="box-outline box-secondary absolute bottom-0 justify-center flex divide-slate-900 divide-x-2 w-full h-5 text-[0.7rem]">
-            <!--        {#if multipleSlotRewards && reward && reward.total}-->
-            <!--            <div class="text-center basis-1/2">-->
-            <!--                {formatPercent(pokemon.total / totalGrunt)}-->
-            <!--            </div>-->
-            <!--            <div class="text-center basis-1/2">-->
-            <!--&lt;!&ndash;                1:{(reward.total / reward.shinies).toFixed(0)}&ndash;&gt;-->
-            <!--                {formatPercent(reward.total / totalReward)}-->
-            <!--            </div>-->
-            <!--        {:else}-->
-            <!--            <div>-->
-            <!--                {formatPercent(pokemon.total / totalGrunt)}-->
-            <!--            </div>-->
-            <!--        {/if}-->
-            <div>
-                {formatPercent(pokemon.total / totalGrunt)}
-            </div>
-        </div>
+        <Box class="bg-[var(--secondary)] absolute bottom-0 text-center w-full text-[0.7rem]">
+            {formatPercent(pokemon.total / totalGrunt)}
+        </Box>
 
         {#if reward && reward.shinies > 0}
-            <div class="absolute box-outline bg-yellow-200 py-0.5 px-1 -right-0.5 -top-1 w-fit h-fit text-xs">
+            <Box class="absolute bg-yellow-200 py-0.5 px-1 -right-0.5 -top-1 text-xs">
                 {oneIn}
-            </div>
+            </Box>
 
             <div class="absolute w-6 aspect-square -top-1 -left-1.5 stroke-[47]">
                 <Sparkle />
@@ -77,4 +84,10 @@
             </div>
         {/if}
     </div>
-</div>
+</Box>
+
+<style>
+    .cont {
+        transition: max-width 1s;
+    }
+</style>

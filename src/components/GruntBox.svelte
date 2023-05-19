@@ -1,10 +1,10 @@
 <script lang="ts">
-    import "../styles/box.css"
+    import Box from "./design/Box.svelte";
     import "../styles/types.css"
     import TeamBox from "./TeamBox.svelte";
     import formatHighNumberWithK from "../utils"
-    import { _, locale } from "svelte-i18n"
-    import type {TeamPokemon, DetailedCharacter} from "../@types/gruntApi"
+    import {_, locale} from "svelte-i18n"
+    import type {DetailedCharacter, TeamPokemon} from "../@types/gruntApi"
 
     import head_4 from "$lib/images/heads/head_4.png";
     import head_5 from "$lib/images/heads/head_5.png";
@@ -50,12 +50,6 @@
     }
 
     const cssId = char.details.name.toLowerCase();
-    const style = `--primary: var(--${cssId}-prim, #94a3b8);
-        --secondary: var(--${cssId}-seco, #e2e8f0);
-        --background: var(--${cssId}-bg, var(--default-bg));
-        --bg-color-1: var(--${cssId}-bg-1, hsl(215, 26%, 23%));
-        --bg-color-2: var(--${cssId}-bg-2, hsl(217, 26%, 27%));`
-
 
     // function formatPercent(num: number) {
     //     return (num * 100).toFixed(2)+"%"
@@ -86,14 +80,22 @@
 
 </script>
 
-<div class="w-full h-full max-w-xs">
-    <div
-        class="h-full divide-slate-900 divide-y-2 bg-slate-800 box-outline rounded-sm flex flex-col"
-        style={style}
+<div
+    class="w-full h-full max-w-xs"
+>
+    <Box
+        class="h-full w-full divide-slate-900 divide-y-2 bg-slate-800 flex flex-col"
+        rounded
+        --primary="var(--{cssId}-prim, #94a3b8)"
+        --secondary="var(--{cssId}-seco, #e2e8f0)"
+        --background="var(--{cssId}-bg, var(--default-bg))"
+        --bg-color-1="var(--{cssId}-bg-1, hsl(215, 26%, 23%))"
+        --bg-color-2="var(--{cssId}-bg-2, hsl(217, 26%, 27%))"
     >
 
+        <!--The Head-->
         <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
-            <div class="box-secondary box-outline flex-none group divide-slate-900 divide-y-2">
+            <Box class="bg-[var(--secondary)] flex-none group divide-slate-900 divide-y-2">
                 <div class="uppercase text-center py-1.5 px-3">
                     {$_(`grunt_names.${char.character.value}`)}
                 </div>
@@ -111,12 +113,12 @@
                 <div class="basis-full px-2 py-1 text-center text-[0.7rem] hidden group-hover:block">
                     {formatHighNumber(char.thisTotal)}&#160;/&#160;{formatHighNumber(char.groupTotal)}
                 </div>
-            </div>
+            </Box>
 
-            <div
+            <Box
                 on:mouseenter={cycleQuote}
                 on:click={cycleQuote}
-                class="box-outline box-primary h-fit items-center pl-2 gap-2 grid w-full"
+                class="bg-[var(--primary)] h-fit items-center pl-2 gap-2 grid w-full"
                 style="grid-template-columns: 2.5rem minmax(0, 1fr);"
             >
                 <img
@@ -127,9 +129,10 @@
                 <p class="italic text-xs py-1 pr-2 text-center break-words">
                     “{quote}”
                 </p>
-            </div>
+            </Box>
         </div>
 
+        <!--The body<-->
         <div class="p-3 grid gap-2.5 flex-grow-0">
             {#each teamPokemon as mons, key}
                 <TeamBox
@@ -144,5 +147,5 @@
             {/each}
         </div>
 
-    </div>
+    </Box>
 </div>

@@ -1,10 +1,9 @@
 <script lang="ts">
     import GruntBox from "../components/GruntBox.svelte";
     import type {ApiResponse, DetailedCharacter} from "../@types/gruntApi";
-    import {Group, CHARACTER_MAP, Gender} from "../gruntData";
+    import {CHARACTER_MAP, Group} from "../gruntData";
     import Motd from "../components/Motd.svelte";
     import Menu from "../components/menu/Menu.svelte";
-    import { _ } from "svelte-i18n"
     import {getGruntData} from "$lib/api";
 
     export let data: ApiResponse

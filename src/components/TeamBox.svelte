@@ -1,5 +1,5 @@
 <script lang="ts">
-    import "../styles/box.css"
+    import Box from "./design/Box.svelte";
     import PokemonBox from "./PokemonBox.svelte"
     import type {TeamPokemon, Reward} from "../@types/gruntApi";
 
@@ -23,13 +23,15 @@
     }
 </script>
 
-<div class="box-outline {primary ? 'reward-box' : 'normal-box'} p-2 flex items-center gap-3">
+<Box
+    class="{primary ? 'bg-yellow-300' : 'bg-slate-700'} p-2 flex items-center gap-3 w-full"
+>
 
     <div class="{primary ? 'reward-number' : 'normal-number'} flex-auto flex justify-center font-poppins italic text-outline text-4xl">
         {key}
     </div>
 
-    <div class="flex gap-2 justify-end w-48">
+    <div class="flex gap-2 justify-end w-[11.5rem] items-stretch h-14">
         {#each mons as mon}
             <PokemonBox
                 pokemon={mon}
@@ -40,7 +42,7 @@
             />
         {/each}
     </div>
-</div>
+</Box>
 
 <style>
     .text-outline {
@@ -63,15 +65,7 @@
         @apply text-yellow-300;
     }
 
-    .reward-box {
-        @apply bg-yellow-300;
-    }
-
     .normal-number {
         color: var(--primary);
-    }
-
-    .normal-box {
-        @apply bg-slate-700;
     }
 </style>

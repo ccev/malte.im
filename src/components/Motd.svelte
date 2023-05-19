@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { onMount } from "svelte";
-    import "../styles/box.css"
+    import {onMount} from "svelte";
+    import Box from "./design/Box.svelte";
 
     const DISCORD = "https://discord.gg/akNbA6v8Ug"
     const CURRENT_MOTD = "discord1"
@@ -21,7 +21,10 @@
 </script>
 
 {#if showMotd}
-    <div class="w-full bg-slate-50 box-outline rounded-sm col-span-full flex divide-x-2 divide-slate-900">
+    <Box
+        class="w-full col-span-full bg-slate-50 flex divide-x-2 divide-slate-900"
+        rounded
+    >
         <a
                 class="block h-full w-full p-4"
                 href={DISCORD}
@@ -56,7 +59,7 @@
                 />
             </svg>
         </button>
-    </div>
+    </Box>
 {/if}
 
 <style>
