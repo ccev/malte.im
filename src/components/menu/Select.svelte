@@ -66,7 +66,7 @@
             {#each options as option}
                 <button
                     on:click={() => selectOption(option.value)}
-                    class="w-full whitespace-nowrap px-12 py-2.5 hover:bg-fore hover:text-back min-[1145px]px-7"
+                    class="w-full whitespace-nowrap px-12 py-2.5 hover:bg-fore hover:text-back"
                 >
                     {option.label}
                 </button>

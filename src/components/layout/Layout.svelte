@@ -3,8 +3,8 @@
     import "./layout.css"
 </script>
 
-<div class="flex flex-col w-full min-[1050px]:p-3 min-[1050px]:flex-row">
-    <div class="min-[1050px]:basis-1/4 text-fore fill-fore stroke-fore">
+<div class="layout flex flex-col w-full">
+    <div class="min-[1215px]:basis-1/4 text-fore fill-fore stroke-fore">
         <div class="nav z-10">
             <Navbar/>
         </div>
