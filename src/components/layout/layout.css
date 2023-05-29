@@ -1,0 +1,102 @@
+main {
+    @apply mt-16 py-3;
+}
+
+.menu {
+    @apply flex-col-reverse fixed bottom-4 right-6;
+    --select-modal-bottom: 0;
+    --select-modal-top: auto;
+    --select-modal-right: 0;
+    --select-modal-left: auto;
+}
+
+.nav {
+    @apply fixed w-full flex bg-back border-b-2 border-outline place-content-end;
+    --select-modal-bottom: auto;
+    --select-modal-top: 4rem;
+    --select-modal-right: 0;
+    --select-modal-left: auto;
+}
+
+.nav-button {
+    @apply bg-back h-16 w-14;
+}
+
+.nav-button:hover {
+    @apply bg-fore text-back fill-back;
+}
+
+.links {
+    @apply fixed bg-back z-20 py-4 w-full flex-col text-lg border-b-2 border-outline;
+}
+
+.link {
+    @apply py-4 w-full justify-center;
+}
+
+.link > span {
+    @apply w-40;
+}
+
+.control-panel {
+    @apply gap-0 h-16 flex-row-reverse mr-3;
+}
+
+@media (min-width: 700px) {
+    .links {
+        @apply h-16 static flex-row bg-transparent text-sm w-full justify-start border-none py-0;
+    }
+
+    .link {
+        @apply px-5 w-fit justify-start;
+    }
+
+    .link > span {
+        @apply w-fit;
+    }
+}
+
+@media (min-width: 1100px) {
+    .menu {
+        @apply sticky top-3 flex-col;
+        --select-modal-bottom: auto;
+        --select-modal-top: 0;
+    }
+}
+
+@media (min-width: 1050px) {
+    main {
+        @apply mt-0 py-0;
+    }
+
+    .nav {
+        @apply sticky float-right mr-0.5 top-3 w-fit block border-none bg-transparent;
+        --select-modal-bottom: auto;
+        --select-modal-top: 0;
+        --select-modal-right: auto;
+        --select-modal-left: 0;
+    }
+
+    .nav-button {
+        @apply w-12 h-12;
+        box-shadow: var(--button-shadow);
+    }
+
+    .nav-button:hover {
+        @apply translate-x-0.5 translate-y-0.5 bg-back text-fore fill-fore;
+        box-shadow: none;
+    }
+
+    .control-panel {
+        @apply gap-3 mt-3 float-right h-12 mr-0 flex-row;
+    }
+
+    .links {
+        @apply flex-col py-2 h-fit bg-back outline-2 outline-outline outline flex-shrink;
+        box-shadow: var(--button-shadow);
+    }
+
+    .link {
+        @apply px-10 py-3  w-full;
+    }
+}

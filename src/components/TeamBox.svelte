@@ -25,6 +25,7 @@
 
 <Box
     class="{primary ? 'bg-yellow-300' : 'bg-slate-700'} p-2 flex items-center gap-3 w-full"
+    inTheme={false}
 >
 
     <div class="{primary ? 'reward-number' : 'normal-number'} flex-auto flex justify-center font-poppins italic text-outline text-4xl">

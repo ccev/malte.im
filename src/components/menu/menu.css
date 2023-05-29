@@ -1,14 +1,15 @@
-:root {
-    --shadow: 0.25rem 0.25rem rgb(15, 23, 42)
-}
-
 .button-shadow {
-    box-shadow: var(--shadow);
+    box-shadow: var(--button-shadow);
 }
 
 .button {
-    @apply bg-slate-50 w-16 aspect-square text-center min-[1145px]:w-12;
-    box-shadow: var(--shadow);
+    @apply bg-back w-12 aspect-square text-center min-[1145px]:w-12;
+    box-shadow: var(--button-shadow);
+}
+
+.button-hover:hover {
+    @apply translate-x-0.5 translate-y-0.5;
+    box-shadow: none;
 }
 
 .button:hover {

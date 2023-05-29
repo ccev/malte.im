@@ -41,7 +41,9 @@
 
 </script>
 
-<Box class="cont group text-slate-900 min-w-[3.5rem] h-full flex-none"
+<Box
+    class="cont group text-slate-900 min-w-[3.5rem] h-full flex-none"
+    inTheme={false}
 >
     <div
             class="bg-[var(--secondary)] text-xs px-0.5 items-center overflow-hidden h-0 min-w-full max-w-[3.5rem] group-hover:max-w-[8rem] group-hover:flex group-hover:h-full"
@@ -67,12 +69,18 @@
                 alt={pokemon.pokemon.name}
         >
 
-        <Box class="bg-[var(--secondary)] absolute bottom-0 text-center w-full text-[0.7rem]">
+        <Box
+            class="bg-[var(--secondary)] absolute bottom-0 text-center w-full text-[0.7rem]"
+            inTheme={false}
+        >
             {formatPercent(pokemon.total / totalGrunt)}
         </Box>
 
         {#if reward && reward.shinies > 0}
-            <Box class="absolute bg-yellow-200 py-0.5 px-1 -right-0.5 -top-1 text-xs">
+            <Box
+                class="absolute bg-yellow-200 py-0.5 px-1 -right-0.5 -top-1 text-xs"
+                inTheme={false}
+            >
                 {oneIn}
             </Box>
 
@@ -85,9 +93,3 @@
         {/if}
     </div>
 </Box>
-
-<style>
-    .cont {
-        transition: max-width 1s;
-    }
-</style>

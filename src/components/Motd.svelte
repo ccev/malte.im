@@ -22,7 +22,7 @@
 
 {#if showMotd}
     <Box
-        class="w-full col-span-full bg-slate-50 flex divide-x-2 divide-slate-900"
+        class="w-full col-span-full bg-back text-fore flex divide-x-2 divide-slate-900"
         rounded
     >
         <a

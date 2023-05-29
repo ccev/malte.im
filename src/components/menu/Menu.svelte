@@ -28,19 +28,9 @@
     const timeframeOptions = timeframes.map(tf => ({"label": tf.label, "value": tf}))
 </script>
 
-<div class="z-30 fixed bottom-2 right-3 min-[1145px]:right-auto min-[1145px]:bottom-auto">
-    <div class="flex flex-col-reverse gap-3 min-[1145px]:flex-col">
-        <Select
-            options={languageOptions}
-            defaultOption={$locale?.toUpperCase()}
-            title="Language"
-            on:select={(event) => changeLocalLocale(event.detail.value)}
-        />
-        <Select
-            options={timeframeOptions}
-            defaultOption={currentTimeframe.shortLabel}
-            title="Timeframe"
-            on:select={(event) => {changeTimeframe(event.detail.value)}}
-        />
-    </div>
-</div>
+<Select
+    options={timeframeOptions}
+    defaultOption={currentTimeframe.shortLabel}
+    title="Timeframe"
+    on:select={(event) => {changeTimeframe(event.detail.value)}}
+/>

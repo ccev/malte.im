@@ -84,7 +84,7 @@
     class="w-full h-full max-w-xs"
 >
     <Box
-        class="h-full w-full divide-slate-900 divide-y-2 bg-slate-800 flex flex-col"
+        class="h-full w-full divide-slate-900 divide-y-2 bg-slate-800 flex flex-col text-slate-900"
         rounded
         --primary="var(--{cssId}-prim, #94a3b8)"
         --secondary="var(--{cssId}-seco, #e2e8f0)"
@@ -95,7 +95,10 @@
 
         <!--The Head-->
         <div class="w-full h-fit header-default flex flex-row p-3 justify-center items-center gap-3 flex-grow">
-            <Box class="bg-[var(--secondary)] flex-none group divide-slate-900 divide-y-2">
+            <Box
+                class="bg-[var(--secondary)] flex-none group divide-slate-900 divide-y-2"
+                inTheme={false}
+            >
                 <div class="uppercase text-center py-1.5 px-3">
                     {$_(`grunt_names.${char.character.value}`)}
                 </div>
@@ -120,6 +123,7 @@
                 on:click={cycleQuote}
                 class="bg-[var(--primary)] h-fit items-center pl-2 gap-2 grid w-full"
                 style="grid-template-columns: 2.5rem minmax(0, 1fr);"
+                inTheme={false}
             >
                 <img
                         class="h-16 object-contain"
@@ -132,7 +136,7 @@
             </Box>
         </div>
 
-        <!--The body<-->
+        <!--The body-->
         <div class="p-3 grid gap-2.5 flex-grow-0">
             {#each teamPokemon as mons, key}
                 <TeamBox

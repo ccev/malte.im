@@ -3,15 +3,40 @@
 @tailwind utilities;
 
 body {
-    --color-1: hsl(50, 98%, 93%);
-    --color-2: hsl(50, 98%, 98%);
+    @apply font-lexend text-slate-900 text-sm text-zinc-700;
+    --button-shadow: 0.25rem 0.25rem rgb(var(--color-menu-outline))
+}
 
+@layer base {
+    body[data-theme='light'] {
+        --color-menu-background: 248 250 252;
+        --color-menu-foreground: 15 23 42;
+        --color-menu-outline: var(--color-menu-foreground);
+        --color-bg-pattern-1: hsl(50, 98%, 93%);
+        --color-bg-pattern-2: hsl(50, 98%, 98%);
+    }
+
+    body[data-theme='dark'] {
+        --color-menu-background: 24 24 27;
+        --color-menu-foreground: 203 213 225;
+        --color-menu-outline: 37 37 39;
+        /*--color-bg-pattern-1: hsl(27, 43%, 14%);*/
+        /*--color-bg-pattern-2: hsl(27, 43%, 16%);*/
+        --color-bg-pattern-1: hsl(269, 17%, 6%);
+        --color-bg-pattern-2: hsl(269, 17%, 7%);
+    }
+}
+
+.background {
     background: repeating-linear-gradient(
-        45deg,
-        var(--color-1),         var(--color-1) 60px,
-        var(--color-2) 60px,    var(--color-2) 70px );
-
-    @apply font-lexend text-slate-900 text-sm
+            45deg,
+            var(--color-bg-pattern-1), var(--color-bg-pattern-1) 60px,
+            var(--color-bg-pattern-2) 60px, var(--color-bg-pattern-2) 70px
+    ) no-repeat center;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: -1;
 }
 
 @layer base {
