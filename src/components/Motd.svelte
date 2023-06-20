@@ -3,7 +3,7 @@
     import Box from "./design/Box.svelte";
 
     const DISCORD = "https://discord.gg/akNbA6v8Ug"
-    const CURRENT_MOTD = "discord1"
+    const CURRENT_MOTD = "newlineups1"
     const SHOW_MOTD_KEY = "hiddenMotd"
     let showMotd = false
 
