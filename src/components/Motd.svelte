@@ -30,9 +30,9 @@
                 href={DISCORD}
         >
             <p class="max-w-3xl mx-auto">
-                Team Rocket lineups changed! Unfortunately this site doesn't handle these changes will.
+                Team Rocket lineups changed! Unfortunately, this site doesn't handle these changes properly yet.
                 <br/>
-                An update is being worked on, if you want to follow along, feel free
+                Luckily, An update is being worked on! If you want to follow along, feel free
                 <a
                         class="text-blue-600 underline visited:text-purple-600"
                         href={DISCORD}>
