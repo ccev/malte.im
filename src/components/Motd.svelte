@@ -30,15 +30,13 @@
                 href={DISCORD}
         >
             <p class="max-w-3xl mx-auto">
-                Hey! This page provides you with the latest information on Team Rocket Grunts.
-                The data is automatically gathered within the last 24 hours.
+                Team Rocket lineups changed! Unfortunately this site doesn't handle these changes will.
                 <br/>
-                I'm actively working on adding more features to make this resource even better.
-                If you like to follow along, feel free to join my Discord server by
+                An update is being worked on, if you want to follow along, feel free
                 <a
                         class="text-blue-600 underline visited:text-purple-600"
                         href={DISCORD}>
-                    clicking here</a>.
+                    to join my Discord server</a>.
 
                 <br />
                 Thank you for visiting, and I hope you find this page helpful!
