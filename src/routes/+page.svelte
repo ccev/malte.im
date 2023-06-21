@@ -69,7 +69,7 @@
         class="mx-auto w-fit max-w-5xl grid gap-2.5 place-items-center items-stretch min-[570px]:grid-cols-2 min-[830px]:grid-cols-3 min-[830px]:gap-3.5"
     >
         <Motd />
-        {#each characters as char}
+        {#each characters as char (char.character.value)}
             <GruntBox char={char}/>
         {/each}
     </div>
