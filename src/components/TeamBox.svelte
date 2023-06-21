@@ -32,7 +32,7 @@
     </div>
 
     <div class="flex gap-2 justify-end w-[11.5rem] items-stretch h-14">
-        {#each mons as mon}
+        {#each mons as mon, key}
             <PokemonBox
                 pokemon={mon}
                 reward={getReward(mon)}
