@@ -4,10 +4,9 @@
 </script>
 
 <div
-    class="z-10 h-fit text-fore fill-fore stroke-fore sticky top-0 w-full flex  bg-back border-b-2 border-outline justify-center"
-    style="--select-modal-bottom: auto; --select-modal-top: 4rem; --select-modal-right: 0; --select-modal-left: auto;"
+    class="nav z-10 h-fit text-fore fill-fore stroke-fore sticky top-0 w-full flex bg-back border-b-2 border-outline justify-center"
 >
-    <div class="w-[64rem] flex place-content-start">
+    <div class="w-[64rem] flex place-content-center">
         <Navbar/>
     </div>
 </div>

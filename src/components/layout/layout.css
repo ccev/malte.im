@@ -1,3 +1,10 @@
+.nav {
+    --select-modal-bottom: auto;
+    --select-modal-top: 4rem;
+    --select-modal-right: 0;
+    --select-modal-left: auto;
+}
+
 .nav-button {
     @apply bg-back h-16 w-16;
 }
@@ -14,7 +21,22 @@
     --select-modal-left: auto;
 }
 
+.links {
+    @apply fixed top-0 bg-back z-20 py-4 w-full flex-col text-lg border-b-2 border-outline;
+}
+
+.link {
+    @apply py-4 w-full justify-center;
+}
+
+
+
 @media (min-width: 700px) {
+    .nav {
+        --select-modal-right: 0;
+        --select-modal-left: auto;
+    }
+
     .links {
         @apply h-16 static flex-row bg-transparent text-sm w-full justify-center border-none py-0;
     }

@@ -3,7 +3,7 @@
 }
 
 .button {
-    @apply bg-back w-12 aspect-square text-center min-[1275px]:w-12;
+    @apply bg-back w-14 aspect-square text-center min-[1275px]:w-12;
     box-shadow: var(--button-shadow);
 }
 

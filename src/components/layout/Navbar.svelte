@@ -49,12 +49,6 @@
 
 <div class="gap-0 h-16 mr-3 flex">
     <Box
-        on:click={showNav}
-        tag="button"
-        class="nav-button flex items-center justify-center min-[700px]:hidden"
-    >
-        <svg class="w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg>    </Box>
-    <Box
         class="nav-button"
     >
         <a
@@ -82,4 +76,11 @@
             {defaultOption}
         </Box>
     </Select>
+    <Box
+        on:click={showNav}
+        tag="button"
+        class="nav-button flex items-center justify-center min-[700px]:hidden"
+    >
+        <svg class="w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/></svg>
+    </Box>
 </div>
