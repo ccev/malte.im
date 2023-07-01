@@ -3,20 +3,19 @@
     import "./layout.css"
 </script>
 
-<div class="layout flex flex-col w-full">
-    <div class="min-[1215px]:basis-1/4 text-fore fill-fore stroke-fore">
-        <div class="nav z-10">
-            <Navbar/>
-        </div>
+<div
+    class="z-10 h-fit text-fore fill-fore stroke-fore sticky top-0 w-full flex  bg-back border-b-2 border-outline justify-center"
+    style="--select-modal-bottom: auto; --select-modal-top: 4rem; --select-modal-right: 0; --select-modal-left: auto;"
+>
+    <div class="w-[64rem] flex place-content-start">
+        <Navbar/>
     </div>
+</div>
 
-    <main class="flex-grow flex-shrink-0 px-3">
-        <slot name="content"/>
-    </main>
+<main class="flex-grow flex-shrink-0 p-3">
+    <slot name="content"/>
+</main>
 
-    <div class="basis-1/4 flex-shrink text-fore fill-fore stroke-fore">
-        <div class="menu flex gap-3">
-            <slot name="menu"/>
-        </div>
-    </div>
+<div class="menu flex gap-3">
+    <slot name="menu"/>
 </div>

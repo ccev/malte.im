@@ -1,7 +1,6 @@
 <script lang="ts">
     import './menu.css'
-    import {changeLocalLocale, LANGUAGES} from "$lib/i18n";
-    import {locale} from "svelte-i18n";
+    import {LANGUAGES} from "$lib/i18n";
     import Select from "./Select.svelte";
     import {createEventDispatcher} from 'svelte';
 

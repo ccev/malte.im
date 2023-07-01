@@ -3,15 +3,13 @@
     import Sparkle from "./Sparkle.svelte";
     import Box from "./design/Box.svelte";
     import formatHighNumberWithK from "../utils"
+    import {getPokemon} from "$lib/uicons";
 
     export let pokemon: TeamPokemon
     export let reward: Reward | undefined
     export let totalGrunt: number
     export let totalReward: number
     export let multipleSlotRewards: boolean
-
-    const formattedMonId = String(pokemon.pokemon.value).padStart(3, "0")
-    const formattedFormId = pokemon.form.value > 0 ? pokemon.form.value.toString() : "00"
 
     function formatPercent(num: number) {
         return (num * 100).toFixed(0) + "%"
@@ -42,7 +40,7 @@
 </script>
 
 <Box
-    class="cont group text-slate-900 min-w-[3.5rem] h-full flex-none"
+    class="group text-slate-900 min-w-[3.5rem] h-full flex-none"
     inTheme={false}
 >
     <div
@@ -65,7 +63,7 @@
     >
         <img
                 class="h-10 w-10 top-1.5 left-0 right-0 mx-auto object-contain absolute"
-                src="https://raw.githubusercontent.com/xxleevo/monicons/master/classic/pokemon_icon_{formattedMonId}_{formattedFormId}.png"
+                src={getPokemon(pokemon)}
                 alt={pokemon.pokemon.name}
         >
 

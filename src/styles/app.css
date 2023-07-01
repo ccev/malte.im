@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-    @apply font-lexend text-slate-900 text-sm text-zinc-700;
+    @apply font-lexend text-slate-900 text-sm;
     --button-shadow: 0.25rem 0.25rem rgb(var(--color-menu-outline))
 }
 
@@ -19,7 +19,7 @@ body {
     body[data-theme='dark'] {
         --color-menu-background: 24 24 27;
         --color-menu-foreground: 203 213 225;
-        --color-menu-outline: 37 37 39;
+        --color-menu-outline: 47 47 49;
         /*--color-bg-pattern-1: hsl(27, 43%, 14%);*/
         /*--color-bg-pattern-2: hsl(27, 43%, 16%);*/
         --color-bg-pattern-1: hsl(269, 17%, 6%);

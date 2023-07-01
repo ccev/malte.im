@@ -1,9 +1,5 @@
 import type {CharacterDetails} from "../gruntData";
-
-export interface Enum {
-    value: number
-    name: string
-}
+import type {Enum} from "./api";
 
 export interface Reward {
     pokemon: Enum

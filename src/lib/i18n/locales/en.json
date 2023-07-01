@@ -1,5 +1,22 @@
 {
     "site": {},
+    "raid_levels": {
+        "1": "Tier 1",
+        "2": "Tier 2",
+        "3": "Tier 3",
+        "4": "Tier 4",
+        "5": "Legendary",
+        "6": "Mega",
+        "7": "Mega Legendary",
+        "8": "Ultra Beast",
+        "9": "Elite",
+        "10": "Primal",
+        "11": "Shadow Tier 1",
+        "12": "Shadow Tier 2",
+        "13": "Shadow Tier 3",
+        "14": "Shadow Tier 4",
+        "15": "Shadow Legendary"
+    },
     "grunt_quotes": {
         "6": "Go, my super bug Pokémon!",
         "7": "Go, my super bug Pokémon!",

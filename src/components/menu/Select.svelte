@@ -13,8 +13,29 @@
     let showDropdown = false
 
     function setMaxHeight(div: HTMLDivElement) {
-        const maxHeight = window.innerHeight - div.getBoundingClientRect().top - 20
-        div.style.maxHeight = maxHeight + "px"
+        const bounds = div.getBoundingClientRect()
+        const py = 20
+        const px = 10
+
+        let maxHeight = window.innerHeight - bounds.top - (py * 2)
+        if (bounds.bottom > window.innerHeight) {
+            div.style.top = py + "px"
+
+            maxHeight += bounds.top
+            div.style.maxHeight = maxHeight + "px"
+        }
+        if (bounds.top < 0) {
+            div.style.bottom = py + "px"
+
+            maxHeight += bounds.bottom
+            div.style.maxHeight = maxHeight + "px"
+        }
+        if (bounds.left < 0) {
+            div.style.transform = `translateX(${(bounds.left * -1) + px}px)`
+        }
+        if (bounds.right > window.innerWidth) {
+            div.style.transform = `translateX(${(window.innerWidth - bounds.right) + px}px)`
+        }
     }
 
     interface Option {

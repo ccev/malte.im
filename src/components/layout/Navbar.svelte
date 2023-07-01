@@ -41,13 +41,13 @@
     class="links whitespace-nowrap hidden min-[700px]:flex"
     bind:this={nav}
 >
-    <Link href="/" label="Home"/>
+    <Link href="/" label="malte.im"/>
     <Link href="/raids" label="Raid Bosses"/>
     <Link href="/rocket" label="Rocket Lineups"/>
     <Link href="/quests" label="Quest Rewards"/>
 </nav>
 
-<div class="control-panel flex">
+<div class="gap-0 h-16 mr-3 flex">
     <Box
         on:click={showNav}
         tag="button"
