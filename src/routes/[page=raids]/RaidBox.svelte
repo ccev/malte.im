@@ -1,6 +1,7 @@
 <script lang="ts">
     import Box from "../../components/design/Box.svelte";
     import "../../styles/types.css"
+    import "../../styles/raids.css"
     import PokemonBox from "../../components/PokemonBox.svelte";
     import formatHighNumberWithK from "../../utils";
     import Sparkle from "../../components/Sparkle.svelte";
@@ -17,10 +18,10 @@
 <Box
     class="w-full min-[990px]:max-w-none h-full divide-slate-900 divide-y-2 bg-slate-800 text-slate-900"
     rounded
-    --primary="var(--fairy-prim, #94a3b8)"
-    --secondary="var(--fairy-seco, #e2e8f0)"
-    --bg-color-1="var(--fairy-bg-1, hsl(215, 26%, 23%))"
-    --bg-color-2="var(--fairy-bg-2, hsl(217, 26%, 27%))"
+    --primary="var(--{level.value}-prim, #94a3b8)"
+    --secondary="var(--{level.value}-seco, #e2e8f0)"
+    --bg-color-1="var(--{level.value}-bg-1, hsl(215, 26%, 23%))"
+    --bg-color-2="var(--{level.value}-bg-2, hsl(217, 26%, 27%))"
 >
     <!--Head-->
 
