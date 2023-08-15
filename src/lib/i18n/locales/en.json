@@ -1,5 +1,10 @@
 {
-    "site": {},
+    "site": {
+        "hero_title_rocket": "Team Rocket Lineups",
+        "hero_subtitle_rocket": "Live Lineups, Rewards and Shiny Rates",
+        "hero_title_raid": "Raid Bosses",
+        "hero_subtitle_raid": "Every available Boss and its rarity"
+    },
     "raid_levels": {
         "1": "Tier 1",
         "2": "Tier 2",

@@ -13,6 +13,10 @@
     @apply bg-fore text-back fill-back;
 }
 
+.h-screen-dynamic {
+    min-height: 100vh;
+}
+
 .menu {
     @apply flex-col-reverse fixed bottom-4 right-6;
     --select-modal-bottom: 0;
@@ -22,27 +26,43 @@
 }
 
 .links {
-    @apply fixed top-0 bg-back z-20 py-4 w-full flex-col text-lg border-b-2 border-outline;
+    @apply fixed top-0 left-0 bg-back z-20 py-4 flex-col border-b-2 border-outline w-full;
+}
+
+.all-links {
+    @apply justify-center;
 }
 
 .link {
-    @apply py-4 w-full justify-center;
+    @apply py-4 w-full justify-center text-lg;
 }
 
+/*.home-link {*/
+/*    @apply w-fit ml-3;*/
+/*}*/
 
 
-@media (min-width: 700px) {
+
+@media (min-width: 720px) {
     .nav {
         --select-modal-right: 0;
         --select-modal-left: auto;
     }
 
+    .show-nav {
+        @apply hidden;
+    }
+
     .links {
-        @apply h-16 static flex-row bg-transparent text-sm w-full justify-center border-none py-0;
+        @apply static flex flex-row bg-transparent border-none py-0 z-auto;
+    }
+
+    .all-links {
+        @apply h-16 justify-center;
     }
 
     .link {
-        @apply px-5 w-fit justify-start;
+        @apply px-5 w-fit justify-start text-sm;
     }
 
     .link > span {
@@ -51,7 +71,7 @@
 }
 
 @media (min-width: 1024px) {
-    .links {
+    .all-links {
         @apply justify-start;
     }
 }

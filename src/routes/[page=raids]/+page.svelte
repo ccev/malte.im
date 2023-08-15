@@ -39,7 +39,6 @@
 
 <Layout>
     <div
-        slot="content"
         class="raid-grid mx-auto w-fit max-w-5xl grid gap-3 place-items-center items-stretch"
     >
         {#each groupedRaids as groupedRaid, key}

@@ -13,6 +13,9 @@
     export let level: Enum
     export let raids: Raid[]
     export let percentage: number
+
+    console.log(JSON.stringify(level))
+    console.log(JSON.stringify(raids))
 </script>
 
 <Box

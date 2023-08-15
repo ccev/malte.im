@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html, body {
+    @apply h-full;
+}
+
 body {
     @apply font-lexend text-slate-900 text-sm;
     --button-shadow: 0.25rem 0.25rem rgb(var(--color-menu-outline))
@@ -14,6 +18,9 @@ body {
         --color-menu-outline: var(--color-menu-foreground);
         --color-bg-pattern-1: hsl(50, 98%, 93%);
         --color-bg-pattern-2: hsl(50, 98%, 98%);
+        --color-hero-bg-1: hsl(199, 81%, 74%);
+        --color-hero-bg-2: hsl(199, 81%, 80%);
+        --color-hero-header: hsl(210, 40%, 98%);
     }
 
     body[data-theme='dark'] {
@@ -22,8 +29,11 @@ body {
         --color-menu-outline: 47 47 49;
         /*--color-bg-pattern-1: hsl(27, 43%, 14%);*/
         /*--color-bg-pattern-2: hsl(27, 43%, 16%);*/
-        --color-bg-pattern-1: hsl(269, 17%, 6%);
-        --color-bg-pattern-2: hsl(269, 17%, 7%);
+        --color-bg-pattern-1: hsl(269, 37%, 12%);
+        --color-bg-pattern-2: hsl(269, 37%, 14%);
+        --color-hero-bg-1: hsl(258, 82%, 66%);
+        --color-hero-bg-2: hsl(258, 82%, 70%);
+        --color-hero-header: #ede9fe;
     }
 }
 

@@ -1,7 +1,6 @@
 import type {ApiResponse} from "../../@types/gruntApi";
-import {gruntEndpoint} from "$lib/api";
+import {getGruntData} from "$lib/api";
 
 export async function load({ fetch, params }): Promise<ApiResponse> {
-    const response = await fetch(gruntEndpoint)
-    return response.json()
+    return await getGruntData(24, fetch)
 }

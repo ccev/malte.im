@@ -1,5 +1,10 @@
 {
-    "site": {},
+    "site": {
+        "hero_title_rocket": "Team Rocket Teams",
+        "hero_subtitle_rocket": "Aktuelle Teams und Shiny-Raten",
+        "hero_title_raid": "Raid-Bosse",
+        "hero_subtitle_raid": "Verfügbare Raid-Bosse und ihre Seltenheit"
+    },
     "grunt_quotes": {
         "6": "Los, mein super Käfer-Pokémon!",
         "7": "Los, mein super Käfer-Pokémon!",

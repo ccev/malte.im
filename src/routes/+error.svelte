@@ -8,7 +8,6 @@
 
 <Layout>
     <div
-        slot="content"
         class="flex flex-col items-center justify-center gap-3 w-full"
     >
         <Box class="bg-back text-fore px-24 py-4">

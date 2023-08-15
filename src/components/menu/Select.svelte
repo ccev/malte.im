@@ -67,19 +67,21 @@
             tag="button"
             class="button bg-slate-50 h-full"
             on:click={openDropdown}
+            props={{title: title}}
         >
             {defaultOption}
         </Box>
     </slot>
-
+<!--TODO: Translate titles-->
     {#if showDropdown}
         <button
             on:click={closeDropdown}
             on:touchstart={closeDropdown}
             class="fixed z-10 w-full h-full left-0 top-0 cursor-default backdrop-blur-[1px] backdrop-brightness-90"
+            title="Close Select Menu"
         ></button>
         <div
-            class="absolute z-20 overflow-y-scroll py-2 button-shadow outline-2 outline outline-outline text-center bg-back text-fore flex flex-col"
+            class="absolute z-30 overflow-y-scroll py-2 button-shadow outline-2 outline outline-outline text-center bg-back text-fore flex flex-col"
             style="bottom: var(--select-modal-bottom, auto); top: var(--select-modal-top, 0); left: var(--select-modal-left, 0); right: var(--select-modal-right, auto);"
             use:setMaxHeight
             in:slide={{duration: 60}}
@@ -88,6 +90,7 @@
                 <button
                     on:click={() => selectOption(option.value)}
                     class="w-full whitespace-nowrap px-12 py-2.5 hover:bg-fore hover:text-back"
+                    title={option.label}
                 >
                     {option.label}
                 </button>

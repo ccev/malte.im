@@ -1,0 +1,42 @@
+@media (min-width: 320px) {
+    .title::after {
+        @apply ml-4;
+        content: "»";
+    }
+}
+
+.card {
+    @apply mx-auto left-0 right-0;
+
+    transition: transform 500ms;
+}
+
+.card-1 {
+    @apply -rotate-12 -right-48 scale-125 ;
+}
+
+.card-2 {
+    @apply rotate-12 top-12 -left-6 right-64 scale-110;
+}
+
+.card-3 {
+    @apply -rotate-3 top-28 left-20 scale-105;
+}
+
+@media (min-width: 670px) {
+    .card {
+        @apply scale-90 rotate-6;
+    }
+
+    .card-1 {
+        @apply right-0 left-20 -top-6 rotate-6 scale-110 group-hover/hero:rotate-[9deg] group-hover/hero:scale-[1.2];
+    }
+
+    .card-2 {
+        @apply -left-12 right-48 top-6 -rotate-6 scale-100 group-hover/hero:rotate-[-10deg] group-hover/hero:scale-[1.13];
+    }
+
+    .card-3 {
+        @apply rotate-3 left-12 top-20 scale-95 group-hover/hero:rotate-[7deg] group-hover/hero:scale-[1.1];
+    }
+}

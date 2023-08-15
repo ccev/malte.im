@@ -10,12 +10,16 @@
     export let tag: string = "div"
     export let rounded: boolean = false
     export let inTheme: boolean = true
+    export let props: object = {}
+
+    const classRegex = ".*?(^| )X-.*"
 </script>
 
 <svelte:element
     this={tag}
     class="outline-2 outline {className}"
     style={style}
+    {...props}
     class:rounded-sm={rounded}
     class:w-fit={!className.includes(" w-")}
     class:h-fit={!className.includes(" h-")}
