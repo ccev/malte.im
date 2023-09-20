@@ -2,6 +2,22 @@
     import Navbar from "./Navbar.svelte";
     import "./layout.css"
     import Box from "../design/Box.svelte";
+    import { onNavigate } from '$app/navigation';
+
+    onNavigate((navigation) => {
+        if (!document.startViewTransition) return
+        if (navigation.from.route.id === navigation.to.route.id) return
+
+        console.log(navigation)
+
+        return new Promise((resolve) => {
+            document.startViewTransition(async () => {
+                resolve();
+                await navigation.complete;
+            })
+        })
+    })
+
     export let scrollToFooter = false
 </script>
 
@@ -16,7 +32,7 @@
 
 <div class="flex flex-col min-h-full">
     <main
-        class="flex-grow flex-shrink-0 pt-20 px-3 pb-4"
+        class="test flex-grow flex-shrink-0 pt-20 px-3 pb-4"
         class:h-screen-dynamic={scrollToFooter}
     >
         <slot />
@@ -44,3 +60,67 @@
 <div class="menu flex gap-3">
     <slot name="menu"/>
 </div>
+
+<style>
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+    }
+
+    @keyframes fade-out {
+        to {
+            opacity: 0;
+        }
+    }
+
+    @keyframes slide-from-right {
+        from {
+            transform: translateX(70px);
+        }
+    }
+
+    @keyframes slide-to-left {
+        to {
+            transform: translateX(-10px);
+        }
+    }
+
+    @keyframes slide-from-top {
+        from {
+            transform: translateY(-70px);
+        }
+    }
+
+    @keyframes slide-to-top {
+        to {
+            transform: translateY(70px);
+        }
+    }
+
+    :root::view-transition-old(main) {
+        animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out, 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+    }
+
+    :root::view-transition-new(main) {
+        animation: 150ms cubic-bezier(0, 0, 0.2, 1) 40ms both fade-in, 200ms cubic-bezier(0.4, 0, 0.2, 1) both
+        slide-from-right;
+    }
+
+    :root::view-transition-old(menu) {
+        animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out, 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-top;
+    }
+
+    :root::view-transition-new(menu) {
+        animation: 150ms cubic-bezier(0, 0, 0.2, 1) 40ms both fade-in, 200ms cubic-bezier(0.4, 0, 0.2, 1) both
+        slide-from-top;
+    }
+
+    main {
+        view-transition-name: main;
+    }
+
+    .menu {
+        view-transition-name: menu;
+    }
+</style>

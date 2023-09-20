@@ -49,6 +49,14 @@ body {
     z-index: -1;
 }
 
+@media (prefers-reduced-motion) {
+    ::view-transition-group(*),
+    ::view-transition-old(*),
+    ::view-transition-new(*) {
+        animation: none !important;
+    }
+}
+
 @layer base {
     /* vietnamese */
     @font-face {
