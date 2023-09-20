@@ -10,6 +10,14 @@ export interface Migration {
     time: Date
 }
 
+interface Stats {
+    cp_20: number
+    cp_25: number
+    weather_boost: Array<number>
+    pokebattler_name: string
+    raid_difficulty: Array<number>
+}
+
 export interface Raid {
     level: Enum
     pokemon: Enum
@@ -19,6 +27,7 @@ export interface Raid {
     total: number
     encountered: number
     shinies: number
+    stats: Stats | null
 }
 
 export interface CurrentRaids {

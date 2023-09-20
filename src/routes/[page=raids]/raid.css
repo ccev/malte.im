@@ -1,15 +1,17 @@
-.raid-grid {
-    grid-template-columns: minmax(0, 350px);
+
+
+.raid-box-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 240px));
 }
 
-@media (min-width: 550px) {
-    .raid-grid {
-        grid-template-columns: repeat(2, minmax(0, 350px));
-    }
-}
+/*@media (min-width: 550px) {*/
+/*    .raid-grid {*/
+/*        grid-template-columns: repeat(2, minmax(0, 350px));*/
+/*    }*/
+/*}*/
 
-@media (min-width: 990px) {
-    .raid-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
+/*@media (min-width: 990px) {*/
+/*    .raid-grid {*/
+/*        grid-template-columns: repeat(2, minmax(0, 1fr));*/
+/*    }*/
+/*}*/

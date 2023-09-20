@@ -39,7 +39,7 @@
 
 <Layout>
     <div
-        class="raid-grid mx-auto w-fit max-w-5xl grid gap-3 place-items-center items-stretch"
+        class="mx-auto max-w-5xl grid gap-3 place-items-center items-stretch"
     >
         {#each groupedRaids as groupedRaid, key}
             <RaidBox level={groupedRaid.level} raids={groupedRaid.raids}
