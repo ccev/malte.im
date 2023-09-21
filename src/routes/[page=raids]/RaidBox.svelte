@@ -26,8 +26,9 @@
     const totalMons = raids.reduce((sum, raid) => sum + raid.total, 0);
 </script>
 
+
 <Box
-    class="w-full h-full divide-slate-900 divide-y-2 bg-slate-800 text-slate-900"
+    class="raid-box divide-slate-900 divide-y-2 bg-slate-800 text-slate-900"
     rounded
     --primary="var(--{level.value}-prim, #94a3b8)"
     --secondary="var(--{level.value}-seco, #e2e8f0)"
@@ -47,7 +48,7 @@
         </div>
     </div>
 
-    <div class="grid raid-box-grid justify-items-center gap-3 py-2 px-3 w-full justify-center">
+    <div class="grid w-full raid-box-grid justify-items-center gap-3 py-2 px-3 justify-center">
         {#each raids as mon, key}
             <Box class="bg-slate-700 w-full flex justify-center p-2 max-w-[270px]" inTheme={false}>
                 <div class="flex gap-3">
@@ -80,7 +81,7 @@
                                 <span>CP {mon.stats?.cp_20}</span>
                             </Box>
                             <Box
-                                class="bg-[var(--secondary)] basis-1/2 h-6 px-1.5 flex gap-0.5 items-center w-full justify-around stroke-slate-900 stroke-[8px] fill-none"
+                                class="bg-[var(--secondary)] basis-1/2 h-6 px-1 flex gap-1 items-center w-full justify-center stroke-slate-900 stroke-[8px] fill-none"
                                 style="stroke-linecap: round; stroke-linejoin: round;"
                             >
                                 {#if mon.stats?.weather_boost.includes(1)}
@@ -133,5 +134,4 @@
             </Box>
         {/each}
     </div>
-
 </Box>

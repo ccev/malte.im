@@ -8,8 +8,6 @@
         if (!document.startViewTransition) return
         if (navigation.from.route.id === navigation.to.route.id) return
 
-        console.log(navigation)
-
         return new Promise((resolve) => {
             document.startViewTransition(async () => {
                 resolve();
@@ -22,13 +20,13 @@
 </script>
 
 
-<div
+<header
     class="nav z-10 h-fit text-fore fill-fore stroke-fore fixed top-0 w-full flex bg-back border-b-2 border-outline justify-center"
 >
     <div class="w-[64rem] flex">
         <Navbar/>
     </div>
-</div>
+</header>
 
 <div class="flex flex-col min-h-full">
     <main
@@ -82,28 +80,28 @@
 
     @keyframes slide-to-left {
         to {
-            transform: translateX(-10px);
+            transform: translateX(-100px);
         }
     }
 
     @keyframes slide-from-top {
         from {
-            transform: translateY(-70px);
+            transform: translateY(70px);
         }
     }
 
     @keyframes slide-to-top {
         to {
-            transform: translateY(70px);
+            transform: translateY(-70px);
         }
     }
 
     :root::view-transition-old(main) {
-        animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out, 300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+        animation: 50ms cubic-bezier(0.4, 0, 1, 1) both fade-out, 160ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
     }
 
     :root::view-transition-new(main) {
-        animation: 150ms cubic-bezier(0, 0, 0.2, 1) 40ms both fade-in, 200ms cubic-bezier(0.4, 0, 0.2, 1) both
+        animation: 80ms cubic-bezier(0, 0, 0.2, 1) 40ms both fade-in, 90ms cubic-bezier(0.4, 0, 0.2, 1) both
         slide-from-right;
     }
 
@@ -122,5 +120,9 @@
 
     .menu {
         view-transition-name: menu;
+    }
+
+    header {
+        view-transition-name: header;
     }
 </style>
