@@ -74,7 +74,7 @@
 
     @keyframes slide-from-right {
         from {
-            transform: translateX(70px);
+            transform: translateX(200px);
         }
     }
 
@@ -98,11 +98,12 @@
 
     :root::view-transition-old(main) {
         animation: 50ms cubic-bezier(0.4, 0, 1, 1) both fade-out, 160ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+        mix-blend-mode: normal;
     }
 
     :root::view-transition-new(main) {
-        animation: 80ms cubic-bezier(0, 0, 0.2, 1) 40ms both fade-in, 90ms cubic-bezier(0.4, 0, 0.2, 1) both
-        slide-from-right;
+        animation: 90ms cubic-bezier(0.1, 0.5, 0.5, 1) both slide-from-right;
+        mix-blend-mode: normal;
     }
 
     :root::view-transition-old(menu) {
