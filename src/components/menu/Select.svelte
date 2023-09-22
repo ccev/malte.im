@@ -9,7 +9,7 @@
     export let title: string = ""
 
     const dispatch = createEventDispatcher();
-    const BODY_CLASS = "overflow-hidden"
+    // const BODY_CLASS = "overflow-hidden"
     let showDropdown = false
 
     function setMaxHeight(div: HTMLDivElement) {
@@ -45,12 +45,12 @@
 
     function closeDropdown() {
         showDropdown = false
-        document.body.classList.remove(BODY_CLASS)
+        // document.body.classList.remove(BODY_CLASS)
     }
 
     function openDropdown() {
         showDropdown = true
-        document.body.classList.add(BODY_CLASS)
+        // document.body.classList.add(BODY_CLASS)
     }
 
     function selectOption(value: string) {

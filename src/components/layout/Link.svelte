@@ -8,11 +8,12 @@
 </script>
 
 <a
-    class="link flex items-center hover:bg-fore hover:text-back"
+    class="link flex gap-1.5 items-center hover:bg-fore hover:text-back fill-fore hover:fill-back"
     href={href}
     class:home-link={isHome}
     on:click={hideCallback}
 >
+    <slot name="icon"/>
     <span>
         {label}
     </span>

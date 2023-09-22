@@ -7,6 +7,8 @@
     import ThemeSwitch from "./ThemeSwitch.svelte";
     import "./layout.css"
     import Link from "./Link.svelte";
+    import Raid from "../icons/pages/Raid.svelte";
+    import Rocket from "../icons/pages/Rocket.svelte";
 
     const languageOptions = Object.keys(LANGUAGES).map(langKey => ({"label": LANGUAGES[langKey], "value": langKey}))
 
@@ -45,8 +47,12 @@
         class="links hidden"
         bind:this={nav}
     >
-        <Link href="/raids" label="Raid Bosses" hideCallback={hideNav}/>
-        <Link href="/rocket" label="Rocket Lineups" hideCallback={hideNav}/>
+        <Link href="/raids" label="Raid Bosses" hideCallback={hideNav}>
+            <Raid slot="icon"/>
+        </Link>
+        <Link href="/rocket" label="Rocket Lineups" hideCallback={hideNav}>
+            <Rocket slot="icon"/>
+        </Link>
 <!--        <Link href="/quests" label="Quest Rewards" hideCallback={hideNav}/>-->
     </div>
 </nav>

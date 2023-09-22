@@ -10,13 +10,13 @@
     import {_} from "svelte-i18n"
     import {getPokemon} from "$lib/uicons";
     import DifficultyBox from "./DifficultyBox.svelte";
-    import Sunny from "../../components/icons/Sunny.svelte";
-    import Cloudy from "../../components/icons/Cloudy.svelte";
-    import PartlyCloudy from "../../components/icons/PartlyCloudy.svelte";
-    import Fog from "../../components/icons/Fog.svelte";
-    import Windy from "../../components/icons/Windy.svelte";
-    import Rainy from "../../components/icons/Rainy.svelte";
-    import Snowy from "../../components/icons/Snowy.svelte";
+    import Sunny from "../../components/icons/weather/Sunny.svelte";
+    import Cloudy from "../../components/icons/weather/Cloudy.svelte";
+    import PartlyCloudy from "../../components/icons/weather/PartlyCloudy.svelte";
+    import Fog from "../../components/icons/weather/Fog.svelte";
+    import Windy from "../../components/icons/weather/Windy.svelte";
+    import Rainy from "../../components/icons/weather/Rainy.svelte";
+    import Snowy from "../../components/icons/weather/Snowy.svelte";
     import "./raid.css"
 
     export let level: Enum
