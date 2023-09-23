@@ -18,8 +18,8 @@ body {
         --color-menu-outline: var(--color-menu-foreground);
         --color-bg-pattern-1: hsl(50, 98%, 93%);
         --color-bg-pattern-2: hsl(50, 98%, 98%);
-        --color-hero-bg-1: hsl(199, 81%, 74%);
-        --color-hero-bg-2: hsl(199, 81%, 80%);
+        --color-hero-bg-1: hsl(22, 85%, 62%);
+        --color-hero-bg-2: hsl(22, 85%, 66%);
         --color-hero-header: hsl(210, 40%, 98%);
     }
 

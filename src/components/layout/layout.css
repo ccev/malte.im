@@ -6,7 +6,7 @@
 }
 
 .nav-button {
-    @apply bg-back h-16 w-16;
+    @apply h-16;
 }
 
 .nav-button:hover {
@@ -25,102 +25,23 @@
     --select-modal-left: auto;
 }
 
-.links {
-    @apply fixed top-0 left-0 bg-back z-20 py-4 flex-col border-b-2 border-outline w-full;
+.navbar-desktop {
+    @apply hidden;
 }
 
-.all-links {
-    @apply justify-center;
+.navbar-mobile {
+    @apply flex;
 }
-
-.link {
-    @apply py-4 w-full justify-center text-lg;
-}
-
-/*.home-link {*/
-/*    @apply w-fit ml-3;*/
-/*}*/
-
-
 
 @media (min-width: 720px) {
-    .nav {
-        --select-modal-right: 0;
-        --select-modal-left: auto;
+    .navbar-desktop {
+        @apply flex;
     }
 
-    .show-nav {
+    .navbar-mobile {
         @apply hidden;
-    }
-
-    .links {
-        @apply static flex flex-row bg-transparent border-none py-0 z-auto;
-    }
-
-    .all-links {
-        @apply h-16 justify-center;
-    }
-
-    .link {
-        @apply px-5 w-fit justify-start text-sm;
-    }
-
-    .link > span {
-        @apply w-fit;
     }
 }
 
 @media (min-width: 1024px) {
-    .all-links {
-        @apply justify-start;
-    }
 }
-
-/*@media (min-width: 1275px) {*/
-/*    .menu {*/
-/*        @apply sticky top-3 flex-col;*/
-/*        --select-modal-bottom: auto;*/
-/*        --select-modal-top: 0;*/
-/*    }*/
-/*}*/
-
-/*@media (min-width: 1215px) {*/
-/*    main {*/
-/*        @apply mt-0 py-0;*/
-/*    }*/
-
-/*    .nav {*/
-/*        @apply sticky float-right mr-0.5 top-3 w-fit block border-none bg-transparent;*/
-/*        --select-modal-bottom: auto;*/
-/*        --select-modal-top: 0;*/
-/*        --select-modal-right: auto;*/
-/*        --select-modal-left: 0;*/
-/*    }*/
-
-/*    .nav-button {*/
-/*        @apply w-12 h-12;*/
-/*        box-shadow: var(--button-shadow);*/
-/*    }*/
-
-/*    .nav-button:hover {*/
-/*        @apply translate-x-0.5 translate-y-0.5 bg-back text-fore fill-fore;*/
-/*        box-shadow: none;*/
-/*    }*/
-
-/*    .control-panel {*/
-/*        @apply gap-3 mt-3 float-right h-12 mr-0 flex-row;*/
-/*    }*/
-
-/*    .links {*/
-/*        @apply flex-col py-2 h-fit bg-back outline-2 outline-outline outline flex-shrink;*/
-/*        box-shadow: var(--button-shadow);*/
-/*    }*/
-
-/*    .link {*/
-/*        @apply px-10 py-3  w-full;*/
-/*    }*/
-
-/*    .layout {*/
-/*        @apply p-3 flex-row;*/
-/*    }*/
-/*}*/

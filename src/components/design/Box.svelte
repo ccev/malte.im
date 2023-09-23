@@ -1,6 +1,7 @@
 <script lang="ts">
     import { forwardEventsBuilder } from "$lib/internal/forwardEventsBuilder"
     import { get_current_component } from 'svelte/internal';
+    import "../../styles/theme-transition.css"
 
     const forwardEvents = forwardEventsBuilder(get_current_component());
 
@@ -11,8 +12,6 @@
     export let rounded: boolean = false
     export let inTheme: boolean = true
     export let props: object = {}
-
-    const classRegex = ".*?(^| )X-.*"
 </script>
 
 <svelte:element
@@ -25,6 +24,7 @@
     class:h-fit={!className.includes(" h-")}
     class:outline-outline={inTheme}
     class:outline-slate-900={!inTheme}
+    class:theme-transition={inTheme}
     use:forwardEvents
 >
     <slot />

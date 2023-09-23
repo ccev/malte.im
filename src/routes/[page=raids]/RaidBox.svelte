@@ -17,7 +17,6 @@
     import Windy from "../../components/icons/weather/Windy.svelte";
     import Rainy from "../../components/icons/weather/Rainy.svelte";
     import Snowy from "../../components/icons/weather/Snowy.svelte";
-    import "./raid.css"
 
     export let level: Enum
     export let raids: Raid[]
@@ -28,7 +27,8 @@
 
 
 <Box
-    class="raid-box divide-slate-900 divide-y-2 bg-slate-800 text-slate-900"
+    class="divide-slate-900 divide-y-2 bg-slate-800 text-slate-900"
+    inTheme={false}
     rounded
     --primary="var(--{level.value}-prim, #94a3b8)"
     --secondary="var(--{level.value}-seco, #e2e8f0)"
@@ -48,7 +48,10 @@
         </div>
     </div>
 
-    <div class="grid w-full raid-box-grid justify-items-center gap-3 py-2 px-3 justify-center">
+    <div
+        class="grid w-full justify-items-center gap-3 py-2 px-3 justify-center"
+        style="grid-template-columns: repeat(var(--raid-box-columns, 1), minmax(220px, 250px));"
+    >
         {#each raids as mon, key}
             <Box class="bg-slate-700 w-full flex justify-center p-2 max-w-[270px]" inTheme={false}>
                 <div class="flex gap-3">

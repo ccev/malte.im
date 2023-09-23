@@ -3,7 +3,6 @@
     import RaidBox from "./RaidBox.svelte";
     import type {CurrentRaids, Raid} from "../../@types/raidApi";
     import type {Enum} from "../../@types/api";
-    import "./raid.css"
 
     export let data: CurrentRaids
 
@@ -51,3 +50,25 @@
     <!--        slot="menu"-->
     <!--    />-->
 </Layout>
+
+<style>
+    /*magic numbering this. didn't find a better solution*/
+
+    @media (min-width: 560px) {
+        .raid-container {
+            --raid-box-columns: 2;
+        }
+    }
+
+    @media (min-width: 812px) {
+        .raid-container {
+            --raid-box-columns: 3;
+        }
+    }
+
+    @media (min-width: 1134px) {
+        .raid-container {
+            --raid-box-columns: 4;
+        }
+    }
+</style>

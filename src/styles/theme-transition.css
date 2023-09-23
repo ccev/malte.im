@@ -1,0 +1,8 @@
+.theme-transition {
+    --duration: 200ms;
+    transition: background-color var(--duration) ease-in,
+    color var(--duration) ease-out,
+    outline-color var(--duration) ease-in,
+    fill var(--duration) ease-out,
+    stroke var(--duration) ease-out;
+}

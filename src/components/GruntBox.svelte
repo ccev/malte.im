@@ -85,6 +85,7 @@
 >
     <Box
         class="h-full w-full divide-slate-900 divide-y-2 bg-slate-800 flex flex-col text-slate-900"
+        inTheme={false}
         rounded
         --primary="var(--{cssId}-prim, #94a3b8)"
         --secondary="var(--{cssId}-seco, #e2e8f0)"

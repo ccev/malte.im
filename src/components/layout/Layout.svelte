@@ -1,8 +1,10 @@
 <script>
-    import Navbar from "./Navbar.svelte";
+    import NavbarDesktop from "./NavbarDesktop.svelte";
     import "./layout.css"
     import Box from "../design/Box.svelte";
     import { onNavigate } from '$app/navigation';
+    import "../../styles/theme-transition.css"
+    import NavbarMobile from "./NavbarMobile.svelte";
 
     onNavigate((navigation) => {
         if (!document.startViewTransition) return
@@ -19,18 +21,16 @@
     export let scrollToFooter = false
 </script>
 
-
 <header
-    class="nav z-10 h-fit text-fore fill-fore stroke-fore fixed top-0 w-full flex bg-back border-b-2 border-outline justify-center"
+    class="theme-transition z-10 h-fit text-fore fill-fore stroke-fore fixed top-0 w-full flex bg-back border-b-2 border-outline justify-center"
 >
-    <div class="w-[64rem] flex">
-        <Navbar/>
-    </div>
+    <NavbarMobile />
+    <NavbarDesktop />
 </header>
 
 <div class="flex flex-col min-h-full">
     <main
-        class="test flex-grow flex-shrink-0 pt-20 px-3 pb-4"
+        class="flex-grow flex-shrink-0 pt-20 px-3 pb-4"
         class:h-screen-dynamic={scrollToFooter}
     >
         <slot />
