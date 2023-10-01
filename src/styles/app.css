@@ -18,9 +18,10 @@ body {
         --color-menu-outline: var(--color-menu-foreground);
         --color-bg-pattern-1: hsl(50, 98%, 93%);
         --color-bg-pattern-2: hsl(50, 98%, 98%);
-        --color-hero-bg-1: hsl(22, 85%, 62%);
-        --color-hero-bg-2: hsl(22, 85%, 66%);
+        --color-hero-bg-1: hsl(46, 97%, 74%);
+        --color-hero-bg-2: hsl(46, 97%, 79%);
         --color-hero-header: hsl(210, 40%, 98%);
+        --color-hero-link: hsl(42, 91%, 54%);
     }
 
     body[data-theme='dark'] {
@@ -32,8 +33,9 @@ body {
         --color-bg-pattern-1: hsl(269, 37%, 12%);
         --color-bg-pattern-2: hsl(269, 37%, 14%);
         --color-hero-bg-1: hsl(258, 82%, 66%);
-        --color-hero-bg-2: hsl(258, 82%, 70%);
-        --color-hero-header: #ede9fe;
+        --color-hero-bg-2: hsl(258, 82%, 69%);
+        --color-hero-header: hsl(251, 95%, 97%);
+        --color-hero-link: hsl(265, 62%, 41%);
     }
 }
 
@@ -55,6 +57,14 @@ body {
     ::view-transition-new(*) {
         animation: none !important;
     }
+}
+
+input,
+textarea,
+button,
+select,
+a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 @layer base {

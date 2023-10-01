@@ -57,15 +57,15 @@
     </nav>
 
     <div class="gap-0.5 h-16 mr-3 flex">
-        <Box>
-            <a
-                class="flex fill-fore h-full w-full items-center justify-center aspect-square nav-button"
-                href="https://discord.gg/akNbA6v8Ug"
-                title="Discord Server"
-            >
-                <Discord class="w-6"/>
-            </a>
-        </Box>
+<!--        <Box>-->
+<!--            <a-->
+<!--                class="flex fill-fore h-full w-full items-center justify-center aspect-square nav-button"-->
+<!--                href="https://discord.gg/akNbA6v8Ug"-->
+<!--                title="Discord Server"-->
+<!--            >-->
+<!--                <Discord class="w-6"/>-->
+<!--            </a>-->
+<!--        </Box>-->
         <ThemeSwitch/>
         <Select
             options={languageOptions}

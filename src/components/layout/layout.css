@@ -33,7 +33,7 @@
     @apply flex;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 680px) {
     .navbar-desktop {
         @apply flex;
     }
@@ -41,7 +41,4 @@
     .navbar-mobile {
         @apply hidden;
     }
-}
-
-@media (min-width: 1024px) {
 }

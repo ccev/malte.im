@@ -1,46 +1,35 @@
 <script lang="ts">
-    import './menu.css'
-    import Box from "../design/Box.svelte";
-    import {onMount} from "svelte";
-    import {scale, fade} from "svelte/transition"
+    import Popup from "./Popup.svelte"
+    import type {popupCallback} from "./Popup.svelte";
+    import Box from "../design/Box.svelte"
+    import {scale, slide, fly} from "svelte/transition"
+    import XIcon from "../icons/XIcon.svelte";
 
-    let showModal = false
+    export let openModal: popupCallback = () => {}
+    export let closeModal: popupCallback = () => {}
 
-    function onModalOpen(node: HTMLDivElement) {
-        document.body.prepend(node)
-    }
-
-    function closeModal() {
-        showModal = false
-    }
-
-    export function openModal() {
-        showModal = true
-    }
-
+    export let title: string
 </script>
 
-{#if showModal}
-    <div class="fixed w-full h-full z-50" use:onModalOpen >
-        <button
-            on:click={closeModal}
-            on:touchstart={closeModal}
-            transition:fade={{duration: 180}}
-            class="w-full h-full cursor-default backdrop-blur-sm backdrop-brightness-90"
-            title="Close Modal"
-        ></button>
-
-        <div
-            transition:scale={{duration: 140}}
-            class="w-32 h-32 absolute left-0 right-0 top-0 bottom-0 m-auto"
+<Popup bind:openPopup={openModal} bind:closePopup={closeModal}>
+    <div
+        transition:scale={{duration: 140}}
+        class="w-full max-w-lg px-3 h-fit absolute left-0 right-0 top-0 bottom-0 m-auto text-fore fill-fore stroke-fore text-lg"
+        role="dialog"
+    >
+        <Box
+            class="bg-back w-full h-full overflow-hidden"
+            rounded
         >
-            <Box
-                class="bg-back w-full h-full"
-
-            >
-                Hi!
+            <Box class="w-full flex items-center h-12">
+                <span class="basis-full pl-3">
+                    {title}
+                </span>
+                <Box tag="button" on:click={closeModal} class="aspect-square h-full flex justify-center items-center">
+                    <XIcon class="w-4"/>
+                </Box>
             </Box>
-        </div>
-
+            <slot />
+        </Box>
     </div>
-{/if}
+</Popup>

@@ -6,6 +6,8 @@
     import "./heroShortcut.css"
     import {_} from "svelte-i18n";
     import RaidBox from "./[page=raids]/RaidBox.svelte";
+    import HeroDiscord from "./HeroDiscord.svelte";
+    import HeroKofi from "./HeroKofi.svelte";
 
     const fairy = {
         "character": {"value": 14, "name": "CHARACTER_FAIRY_GRUNT_FEMALE"},
@@ -90,6 +92,8 @@
 
 <Layout scrollToFooter={true}>
     <div class="max-w-5xl mx-auto grid gap-4">
+
+
         <HeroShortcut
             title={$_("site.hero_title_rocket")}
             subtitle={$_("site.hero_subtitle_rocket")}
@@ -118,5 +122,10 @@
                 <RaidBox level={raid5level} raids={raid5} percentage={0.1}/>
             </div>
         </HeroShortcut>
+
+        <div class="flex gap-3">
+            <HeroDiscord />
+            <HeroKofi />
+        </div>
     </div>
 </Layout>
