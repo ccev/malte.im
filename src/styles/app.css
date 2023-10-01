@@ -12,7 +12,7 @@ body {
 }
 
 @layer base {
-    body[data-theme='light'] {
+    body[data-theme='light'], body[data-theme='default'] {
         --color-menu-background: 248 250 252;
         --color-menu-foreground: 15 23 42;
         --color-menu-outline: var(--color-menu-foreground);

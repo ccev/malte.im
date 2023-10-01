@@ -5,6 +5,9 @@
     import { onNavigate } from '$app/navigation';
     import "../../styles/theme-transition.css"
     import NavbarMobile from "./NavbarMobile.svelte";
+    import {onMount} from "svelte";
+    import {setTheme} from "$lib/theme";
+    import ThemeSwitch from "./ThemeSwitch.svelte";
 
     onNavigate((navigation) => {
         if (!document.startViewTransition) return
@@ -18,6 +21,28 @@
         })
     })
 
+    const THEME_DARK = "dark"
+    const THEME_LIGHT = "light"
+    let isDarkMode = false
+
+    onMount(() => {
+        const savedTheme = document.body.getAttribute("data-theme")
+        if (savedTheme !== "default") {
+            isDarkMode = savedTheme === THEME_DARK
+            return
+        }
+
+        isDarkMode = window.matchMedia("(prefers-color-scheme: dark)",).matches
+        console.log(isDarkMode)
+        setTheme(isDarkMode ? THEME_DARK : THEME_LIGHT)
+    })
+
+    function toggleTheme() {
+        const nextTheme = isDarkMode ? THEME_LIGHT : THEME_DARK
+        isDarkMode = !isDarkMode
+        setTheme(nextTheme)
+    }
+
     export let scrollToFooter = false
 </script>
 
@@ -25,7 +50,7 @@
     class="theme-transition z-10 h-fit text-fore fill-fore stroke-fore fixed top-0 w-full flex bg-back border-b-2 border-outline justify-center"
 >
     <NavbarMobile />
-    <NavbarDesktop />
+    <NavbarDesktop {isDarkMode} {toggleTheme} />
 </header>
 
 <div class="flex flex-col min-h-full">
