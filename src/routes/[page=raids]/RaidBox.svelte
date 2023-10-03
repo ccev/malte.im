@@ -21,6 +21,7 @@
     export let level: Enum
     export let raids: Raid[]
     export let percentage: number
+    console.log(raids)
 
     const totalMons = raids.reduce((sum, raid) => sum + raid.total, 0);
 </script>

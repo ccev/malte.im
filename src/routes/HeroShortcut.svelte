@@ -4,12 +4,13 @@
 
     export let title: string
     export let subtitle: string
+    export let link: string
 </script>
 
 <Box rounded={true} class="w-full h-44 bg-slate-700 overflow-hidden" inTheme={false}>
     <a
         class="back-pattern w-full h-full group/hero"
-        href="/rocket"
+        href={link}
     >
 
         <div class="section-right h-full relative">

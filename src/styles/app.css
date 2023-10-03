@@ -21,7 +21,7 @@ body {
         --color-hero-bg-1: hsl(46, 97%, 74%);
         --color-hero-bg-2: hsl(46, 97%, 79%);
         --color-hero-header: hsl(210, 40%, 98%);
-        --color-hero-link: hsl(42, 91%, 54%);
+        --color-hero-link: hsl(201, 94%, 88%);
     }
 
     body[data-theme='dark'] {
@@ -35,7 +35,7 @@ body {
         --color-hero-bg-1: hsl(258, 82%, 66%);
         --color-hero-bg-2: hsl(258, 82%, 69%);
         --color-hero-header: hsl(251, 95%, 97%);
-        --color-hero-link: hsl(265, 62%, 41%);
+        --color-hero-link: hsl(17, 88%, 68%);
     }
 }
 
