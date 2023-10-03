@@ -33,7 +33,6 @@
         }
 
         isDarkMode = window.matchMedia("(prefers-color-scheme: dark)",).matches
-        console.log(isDarkMode)
         setTheme(isDarkMode ? THEME_DARK : THEME_LIGHT)
     })
 

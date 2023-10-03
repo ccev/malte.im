@@ -25,7 +25,6 @@ export async function getRaidData(fetch: CallableFunction): Promise<CurrentRaids
     const response = await fetch(raidEndpoint)
     handleFetchErrors(response)
     const data = await response.json()
-    console.log(data)
     return {
         migration: {
             id: data.migration.id,
