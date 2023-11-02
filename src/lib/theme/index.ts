@@ -1,5 +1,15 @@
-export function setTheme(theme: string) {
-    const one_year = 60 * 60 * 24 * 365;
-    document.cookie = `theme=${theme}; max-age=${one_year}; path=/`;
-    document.body.setAttribute("data-theme", theme);
+import {writable} from "svelte/store"
+import type {Writable} from "svelte/store"
+
+export const THEME_DARK = "dark"
+export const THEME_LIGHT = "light"
+
+export const isDarkMode: Writable<boolean> = writable()
+
+export function toggleTheme(document: Document) {
+    isDarkMode.update(value => !value)
+}
+
+export function getThemeName(isDarkMode: boolean) {
+    return isDarkMode ? THEME_DARK : THEME_LIGHT
 }

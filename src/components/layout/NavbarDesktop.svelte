@@ -12,9 +12,6 @@
     import Discord from "../icons/Discord.svelte";
 
     const languageOptions = Object.keys(LANGUAGES).map(langKey => ({"label": LANGUAGES[langKey], "value": langKey}))
-
-    export let toggleTheme: () => {}
-    export let isDarkMode: boolean
 </script>
 
 <div class="navbar-desktop w-[64rem] stroke-0">
@@ -34,7 +31,7 @@
     </nav>
 
     <div class="gap-0.5 h-16 mr-3 flex">
-        <ThemeSwitch {isDarkMode} {toggleTheme} />
+        <ThemeSwitch />
         <Select
             options={languageOptions}
             defaultOption={$locale?.toUpperCase()}
