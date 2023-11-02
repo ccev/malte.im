@@ -3,15 +3,13 @@
     import Select from "../menu/Select.svelte";
     import "../menu/menu.css"
     import {locale} from "svelte-i18n";
-    import {changeLocalLocale, LANGUAGES} from "$lib/i18n";
+    import {changeLocalLocale, LANGUAGES, languageOptions} from "$lib/i18n";
     import ThemeSwitch from "./ThemeSwitch.svelte";
     import "./layout.css"
     import Link from "./NavbarLink.svelte";
     import Raid from "../icons/pages/Raid.svelte";
     import Rocket from "../icons/pages/Rocket.svelte";
     import Discord from "../icons/Discord.svelte";
-
-    const languageOptions = Object.keys(LANGUAGES).map(langKey => ({"label": LANGUAGES[langKey], "value": langKey}))
 </script>
 
 <div class="navbar-desktop w-[64rem] stroke-0">

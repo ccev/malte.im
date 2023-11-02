@@ -6,18 +6,16 @@
     import SettingsModalSetting from "./SettingsModalSetting.svelte";
     import {THEME_DARK, THEME_LIGHT, isDarkMode, getThemeName} from "$lib/theme";
     import {onDestroy} from "svelte";
+    import {languageOptions, changeLocalLocale} from "$lib/i18n";
+    import {locale} from "svelte-i18n";
 
     let closeModal: popupCallback
     export let openModal: popupCallback
 
     const themes = [
-        {"name": "Light", "value": THEME_LIGHT},
-        {"name": "Dark", "value": THEME_DARK}
+        {"label": "Light", "value": THEME_LIGHT},
+        {"label": "Dark", "value": THEME_DARK}
     ]
-
-    let isDarkModeLocal = false
-    const unsubscribe = isDarkMode.subscribe((value) => isDarkModeLocal = value)
-    onDestroy(unsubscribe)
 
     function updateTheme(theme: string) {
         isDarkMode.set(theme === THEME_DARK)
@@ -32,7 +30,7 @@
         class="grid max-w-[18rem] mx-auto gap-x-3 gap-y-5 px-3 py-7 items-center"
         style="grid-template-columns: 40% 60%;"
     >
-        <SettingsModalSetting label="Language" options={[{"name": "German", "value": "de"}]} selectCallback={() => {}}/>
-        <SettingsModalSetting label="Theme" options={themes} selectCallback={updateTheme} defaultValue={getThemeName(isDarkModeLocal)}/>
+        <SettingsModalSetting label="Language" options={languageOptions} selectCallback={changeLocalLocale} defaultValue={$locale ? $locale : '?'}/>
+        <SettingsModalSetting label="Theme" options={themes} selectCallback={updateTheme} defaultValue={getThemeName($isDarkMode)}/>
     </div>
 </Modal>
