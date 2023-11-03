@@ -3,6 +3,7 @@
     import {LANGUAGES} from "$lib/i18n";
     import Select from "./Select.svelte";
     import {createEventDispatcher} from 'svelte';
+    import {AnchorX, AnchorY} from "./Select.svelte";
 
     const dispatch = createEventDispatcher();
     interface Timeframe {
@@ -31,5 +32,6 @@
     options={timeframeOptions}
     defaultOption={currentTimeframe.shortLabel}
     title="Timeframe"
+    anchorY={AnchorY.Bottom}
     on:select={(event) => {changeTimeframe(event.detail.value)}}
 />

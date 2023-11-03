@@ -1,39 +1,72 @@
+<script context="module" lang="ts">
+    export enum AnchorX {
+        Left = 1,
+        Right = 2
+    }
+
+    export enum AnchorY {
+        Top = 1,
+        Bottom = 2
+    }
+</script>
+
 <script lang="ts">
     import './menu.css'
     import Box from "../design/Box.svelte";
     import {createEventDispatcher} from 'svelte';
     import {slide} from 'svelte/transition';
+    import type {popupCallback} from "./Popup.svelte";
+    import Popup from "./Popup.svelte";
 
     export let options: Option[] = []
     export let defaultOption: string = ""
     export let title: string = ""
+    export let anchorX: AnchorX = AnchorX.Right
+    export let anchorY: AnchorY = AnchorY.Top
 
     const dispatch = createEventDispatcher();
-    // const BODY_CLASS = "overflow-hidden"
-    let showDropdown = false
+    let selectButton: HTMLDivElement
 
     function setMaxHeight(div: HTMLDivElement) {
-        const bounds = div.getBoundingClientRect()
+        const buttonBounds = selectButton.getBoundingClientRect()
         const py = 20
         const px = 10
 
+        if (anchorX === AnchorX.Left) {
+            div.style.left = buttonBounds.left + "px"
+        }
+        else if (anchorX === AnchorX.Right) {
+            div.style.right = window.innerWidth - buttonBounds.right + "px"
+        }
+        if (anchorY === AnchorY.Top) {
+            div.style.top = buttonBounds.bottom + "px"
+        }
+        else if (anchorY === AnchorY.Bottom) {
+            div.style.bottom = window.innerHeight - buttonBounds.top + "px"
+        }
+        const bounds = div.getBoundingClientRect()
+
         let maxHeight = window.innerHeight - bounds.top - (py * 2)
         if (bounds.bottom > window.innerHeight) {
+            console.log("bottom")
             div.style.top = py + "px"
 
             maxHeight += bounds.top
             div.style.maxHeight = maxHeight + "px"
         }
         if (bounds.top < 0) {
+            console.log("top")
             div.style.bottom = py + "px"
 
             maxHeight += bounds.bottom
             div.style.maxHeight = maxHeight + "px"
         }
         if (bounds.left < 0) {
+            console.log("left")
             div.style.transform = `translateX(${(bounds.left * -1) + px}px)`
         }
         if (bounds.right > window.innerWidth) {
+            console.log("right")
             div.style.transform = `translateX(${(window.innerWidth - bounds.right) + px}px)`
         }
     }
@@ -43,15 +76,8 @@
         value: any;
     }
 
-    function closeDropdown() {
-        showDropdown = false
-        // document.body.classList.remove(BODY_CLASS)
-    }
-
-    function openDropdown() {
-        showDropdown = true
-        // document.body.classList.add(BODY_CLASS)
-    }
+    let openDropdown: popupCallback
+    let closeDropdown: popupCallback
 
     function selectOption(value: string) {
         closeDropdown()
@@ -60,31 +86,33 @@
 </script>
 
 <div class="relative w-fit">
-    <slot
-        name="button" {openDropdown} {defaultOption}
+    <div
+        class="w-fit h-fit"
+        bind:this={selectButton}
     >
-        <Box
-            tag="button"
-            class="button bg-slate-50 h-full"
-            on:click={openDropdown}
-            props={{title: title}}
+        <slot
+            name="button" {openDropdown} {defaultOption}
         >
-            {defaultOption}
-        </Box>
-    </slot>
-<!--TODO: Translate titles-->
-    {#if showDropdown}
-        <button
-            on:click={closeDropdown}
-            on:touchstart={closeDropdown}
-            class="fixed z-10 w-full h-full left-0 top-0 cursor-default backdrop-blur-[1px] backdrop-brightness-90"
-            title="Close Select Menu"
-        ></button>
+            <Box
+                tag="button"
+                class="button bg-slate-50 h-full text-fore"
+                on:click={openDropdown}
+                props={{title: title}}
+            >
+                {defaultOption}
+            </Box>
+        </slot>
+    </div>
+
+    <!--TODO: Translate titles-->
+    <Popup
+        bind:openPopup={openDropdown}
+        bind:closePopup={closeDropdown}
+    >
         <div
-            class="absolute z-30 overflow-y-scroll py-2 button-shadow outline-2 outline outline-outline text-center bg-back text-fore flex flex-col"
-            style="bottom: var(--select-modal-bottom, auto); top: var(--select-modal-top, 0); left: var(--select-modal-left, 0); right: var(--select-modal-right, auto);"
+            class="fixed z-30 overflow-y-auto py-2 button-shadow outline-2 outline outline-outline text-center bg-back text-fore flex flex-col"
+            transition:slide={{duration: 80}}
             use:setMaxHeight
-            in:slide={{duration: 60}}
         >
             {#each options as option}
                 <button
@@ -96,6 +124,6 @@
                 </button>
             {/each}
         </div>
-    {/if}
+    </Popup>
 </div>
 

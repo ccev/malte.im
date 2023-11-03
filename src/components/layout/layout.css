@@ -1,10 +1,3 @@
-.nav {
-    --select-modal-bottom: auto;
-    --select-modal-top: 4rem;
-    --select-modal-right: 0;
-    --select-modal-left: auto;
-}
-
 .nav-button {
     @apply h-16;
 }
@@ -19,10 +12,6 @@
 
 .menu {
     @apply flex-col-reverse fixed bottom-4 right-6;
-    --select-modal-bottom: 0;
-    --select-modal-top: auto;
-    --select-modal-right: 0;
-    --select-modal-left: auto;
 }
 
 .navbar-desktop {
