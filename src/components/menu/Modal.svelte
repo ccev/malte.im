@@ -26,7 +26,7 @@
                     {title}
                 </span>
                 <Box tag="button" on:click={closeModal} class="aspect-square h-full flex justify-center items-center">
-                    <XIcon class="w-4"/>
+                    <XIcon class="w-3"/>
                 </Box>
             </Box>
             <slot />

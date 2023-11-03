@@ -24,15 +24,15 @@
 }
 
 .raid-card-1 {
-    @apply -rotate-12 -right-48 scale-125 ;
+    @apply -rotate-6 -top-6 -right-32 scale-110 ;
 }
 
 .raid-card-2 {
-    @apply rotate-12 top-12 -left-6 right-64 scale-110;
+    @apply rotate-6 top-12 -left-6 right-64 scale-105;
 }
 
 .raid-card-3 {
-    @apply -rotate-3 top-28 left-20 scale-105;
+    @apply -rotate-1 top-20 -right-96 scale-105;
 }
 
 @media (min-width: 670px) {
@@ -41,26 +41,32 @@
     }
 
     .grunt-card-1 {
-        @apply right-0 left-20 -top-6 rotate-6 scale-110 group-hover/hero:rotate-[9deg] group-hover/hero:scale-[1.2];
+        @apply right-0 left-20 -top-6 rotate-6 scale-110;
+        @apply group-hover/hero:rotate-[9deg] group-hover/hero:scale-[1.2];
     }
 
     .grunt-card-2 {
-        @apply -left-12 right-48 top-6 -rotate-6 scale-100 group-hover/hero:rotate-[-10deg] group-hover/hero:scale-[1.13];
+        @apply -left-12 right-48 top-6 -rotate-6 scale-100;
+        @apply group-hover/hero:rotate-[-10deg] group-hover/hero:scale-[1.13];
     }
 
     .grunt-card-3 {
-        @apply rotate-3 left-12 top-20 scale-95 group-hover/hero:rotate-[7deg] group-hover/hero:scale-[1.1];
+        @apply rotate-3 left-12 top-20 scale-95;
+        @apply group-hover/hero:rotate-[7deg] group-hover/hero:scale-[1.1];
     }
 
     .raid-card-1 {
-        @apply left-20 -right-2 -top-8 -rotate-12 scale-105 group-hover/hero:rotate-[9deg] group-hover/hero:scale-[1.2];
+        @apply left-20 -right-2 top-3 scale-105 rotate-3;
+        @apply group-hover/hero:rotate-[5deg] group-hover/hero:scale-[1.17];
     }
 
     .raid-card-2 {
-        @apply -left-12 right-48 top-8 rotate-3 scale-95 group-hover/hero:rotate-[-10deg] group-hover/hero:scale-[1.13];
+        @apply -left-12 right-48 top-6 -rotate-1 scale-90;
+        @apply group-hover/hero:rotate-[-3deg] group-hover/hero:scale-[1.02];
     }
 
     .raid-card-3 {
-        @apply -rotate-6 left-12 top-20 scale-90 group-hover/hero:rotate-[7deg] group-hover/hero:scale-[1.1];
+        @apply rotate-6 left-12 top-20 scale-[.85];
+        @apply group-hover/hero:rotate-[7deg] group-hover/hero:scale-95;
     }
 }
