@@ -33,7 +33,7 @@
     @apply flex;
 }
 
-@media (min-width: 680px) {
+@media (min-width: 600px) {
     .navbar-desktop {
         @apply flex;
     }

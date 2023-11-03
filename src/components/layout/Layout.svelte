@@ -29,7 +29,6 @@
             if (value === undefined) {
                 return
             }
-            console.log("theme switched to " + value)
             const theme = value ? THEME_DARK : THEME_LIGHT
             document.body.setAttribute("data-theme", theme);
             const one_year = 60 * 60 * 24 * 365;
@@ -38,7 +37,6 @@
 
         const savedTheme = document.body.getAttribute("data-theme")
         if (savedTheme !== "default") {
-            console.log(savedTheme)
             isDarkMode.set(savedTheme === THEME_DARK)
             return
         }
