@@ -69,14 +69,11 @@
         <slot />
     </main>
 
-    <footer class="w-full bg-black text-slate-200 py-1 text-xs flex-shrink-0 flex-grow-0">
-        <div class="max-w-5xl mx-auto flex gap-8 px-2 items-center text-center">
+    <footer class="w-full bg-black text-slate-200 py-3 text-xs flex-shrink-0 flex-grow-0">
+        <div class="max-w-5xl mx-auto flex gap-8 px-3 items-center text-center">
             <a href="/" class="flex-1 text-left">
                 malte.im
             </a>
-<!--            <a href="/privacy-policy">-->
-<!--                Imprint-->
-<!--            </a>-->
             <a href="/use">
                 {$_("site.footer_use")}
             </a>

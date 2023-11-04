@@ -32,6 +32,6 @@
             class="w-full h-full cursor-default backdrop-blur-sm backdrop-brightness-90"
             title={$_("site.close_pop_up")}
         ></button>
-        <slot/>
+        <slot />
     </div>
 {/if}
