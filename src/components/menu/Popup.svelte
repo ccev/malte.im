@@ -5,6 +5,7 @@
 <script lang="ts">
     import './menu.css'
     import {fade} from "svelte/transition"
+    import {_} from "svelte-i18n";
 
     let showPopup = false
 
@@ -29,7 +30,7 @@
             on:touchstart={closePopup}
             transition:fade={{duration: 180}}
             class="w-full h-full cursor-default backdrop-blur-sm backdrop-brightness-90"
-            title="Close Pop-Up"
+            title={$_("site.close_pop_up")}
         ></button>
         <slot/>
     </div>

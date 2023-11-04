@@ -1,9 +1,9 @@
 <script lang="ts">
     import './menu.css'
     import {LANGUAGES} from "$lib/i18n";
-    import Select from "./Select.svelte";
+    import Select, {AnchorY} from "./Select.svelte";
     import {createEventDispatcher} from 'svelte';
-    import {AnchorX, AnchorY} from "./Select.svelte";
+    import {_} from "svelte-i18n";
 
     const dispatch = createEventDispatcher();
     interface Timeframe {
@@ -31,7 +31,7 @@
 <Select
     options={timeframeOptions}
     defaultOption={currentTimeframe.shortLabel}
-    title="Timeframe"
+    title={$_("site.input_change_timeframe")}
     anchorY={AnchorY.Bottom}
     on:select={(event) => {changeTimeframe(event.detail.value)}}
 />

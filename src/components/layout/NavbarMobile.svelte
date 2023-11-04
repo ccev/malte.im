@@ -11,6 +11,7 @@
     import Modal from "../menu/Modal.svelte";
     import type {popupCallback} from "../menu/Popup.svelte";
     import MobileSettingsModal from "../menu/MobileSettingsModal.svelte";
+    import {_} from "svelte-i18n";
 
     const languageOptions = Object.keys(LANGUAGES).map(langKey => ({"label": LANGUAGES[langKey], "value": langKey}))
 
@@ -32,15 +33,12 @@
             </a>
         </li>
 
-        <NavbarMobileLink href="/raids" label="Raid Bosses">
+        <NavbarMobileLink href="/raids" label={$_("site.title_raid_bosses")}>
             <Raid slot="icon" class="h-6"/>
         </NavbarMobileLink>
-        <NavbarMobileLink href="/rocket" label="Rocket Lineups">
+        <NavbarMobileLink href="/rocket" label={$_("site.title_rocket_lineups")}>
             <Rocket slot="icon" class="h-5"/>
         </NavbarMobileLink>
-<!--        <NavbarMobileLink href="https://discord.gg/akNbA6v8Ug" label="Discord Server">-->
-<!--            <Discord slot="icon" class="h-4"/>-->
-<!--        </NavbarMobileLink>-->
         <Box tag="li" class="flex-shrink h-full w-16">
             <button
                 on:click={openModal}

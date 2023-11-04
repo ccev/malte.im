@@ -5,13 +5,14 @@
     import {getThemeName, isDarkMode, THEME_DARK, THEME_LIGHT} from "$lib/theme";
     import {changeLocalLocale, languageOptions} from "$lib/i18n";
     import {locale} from "svelte-i18n";
+    import {_} from "svelte-i18n";
 
     let closeModal: popupCallback
     export let openModal: popupCallback
 
     const themes = [
-        {"label": "Light", "value": THEME_LIGHT},
-        {"label": "Dark", "value": THEME_DARK}
+        {"label": "site.theme_light_short", "value": THEME_LIGHT},
+        {"label": "site.theme_dark_short", "value": THEME_DARK}
     ]
 
     function updateTheme(theme: string) {
@@ -20,7 +21,7 @@
 </script>
 
 <Modal
-    title="Settings"
+    title="site.mobile_settings"
     bind:closeModal bind:openModal
 >
     <div
@@ -28,13 +29,13 @@
         style="grid-template-columns: 40% 60%;"
     >
         <SettingsModalSetting
-            label="Language"
+            label={$_("site.input_language")}
             options={languageOptions}
             selectCallback={changeLocalLocale}
             defaultValue={$locale ? $locale : '?'}
         />
         <SettingsModalSetting
-            label="Theme"
+            label={$_("site.input_theme")}
             options={themes}
             selectCallback={updateTheme}
             defaultValue={getThemeName($isDarkMode)}

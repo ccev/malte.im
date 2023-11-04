@@ -73,9 +73,9 @@
         <RaidBox level={raid13level} raids={raid13} percentage={0.1}/>
     </div>
     <div class="card raid-card-2 absolute w-fit" style="--raid-box-columns: 2" aria-hidden="true">
-        <RaidBox level={raid1level} raids={raid1} percentage={0.1}/>
+        <RaidBox level={raid1level} raids={raid1} percentage={0.25}/>
     </div>
     <div class="card raid-card-3 absolute w-fit" style="--raid-box-columns: 2" aria-hidden="true">
-        <RaidBox level={raid5level} raids={raid5} percentage={0.1}/>
+        <RaidBox level={raid5level} raids={raid5} percentage={0.16}/>
     </div>
 </HeroShortcut>

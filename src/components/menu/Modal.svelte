@@ -4,6 +4,7 @@
     import Box from "../design/Box.svelte"
     import {scale, slide, fly} from "svelte/transition"
     import XIcon from "../icons/XIcon.svelte";
+    import {_} from "svelte-i18n";
 
     export let openModal: popupCallback = () => {}
     export let closeModal: popupCallback = () => {}
@@ -23,7 +24,7 @@
         >
             <Box class="w-full flex items-center h-12">
                 <span class="basis-full pl-3">
-                    {title}
+                    {$_(title)}
                 </span>
                 <Box tag="button" on:click={closeModal} class="aspect-square h-full flex justify-center items-center">
                     <XIcon class="w-3"/>

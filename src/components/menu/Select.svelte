@@ -104,7 +104,6 @@
         </slot>
     </div>
 
-    <!--TODO: Translate titles-->
     <Popup
         bind:openPopup={openDropdown}
         bind:closePopup={closeDropdown}

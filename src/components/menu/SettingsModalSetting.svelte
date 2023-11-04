@@ -1,6 +1,5 @@
 <script lang="ts">
-    import Box from "../design/Box.svelte";
-    import type {ChangeEventHandler} from "svelte/elements";
+    import {_} from "svelte-i18n";
 
     type Option = {
         label: string,
@@ -22,6 +21,6 @@
     class="w-full truncate py-3 px-2 text-center text-fore bg-back outline-2 outline outline-outline theme-transition"
 >
     {#each options as option}
-        <option value={option.value} selected={option.value === defaultValue}>{option.label}</option>
+        <option value={option.value} selected={option.value === defaultValue}>{$_(option.label)}</option>
     {/each}
 </select>

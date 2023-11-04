@@ -1,6 +1,7 @@
 <script>
-import Box from "../components/design/Box.svelte";
-import Discord from "../components/icons/Discord.svelte";
+    import Box from "../components/design/Box.svelte";
+    import Discord from "../components/icons/Discord.svelte";
+    import {_} from "svelte-i18n";
 </script>
 
 <Box rounded={true} class="w-full h-10 bg-[var(--color-hero-link)] overflow-hidden" inTheme={false}>
@@ -11,7 +12,7 @@ import Discord from "../components/icons/Discord.svelte";
     >
         <Discord class="w-5 fill-slate-50"/>
         <span>
-            Join on Discord
+            {$_("site.hero_discord")}
         </span>
 
     </a>

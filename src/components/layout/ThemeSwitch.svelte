@@ -1,11 +1,17 @@
 <script lang="ts">
     import Box from "../design/Box.svelte"
     import {isDarkMode, toggleTheme} from "$lib/theme";
+    import {_} from "svelte-i18n";
+
+    const lightLocale = "site.theme_light"
+    const darkLocale = "site.theme_dark"
+    let themeLocale = darkLocale
+    isDarkMode.subscribe((v) => v ? themeLocale = lightLocale : themeLocale = darkLocale)
 </script>
-<!--TODO translate theme switch-->
+
 <Box
     on:click={() => toggleTheme(document)}
-    props={{title: `Switch to ${$isDarkMode ? 'Light' : 'Dark'} Theme`}}
+    props={{title: $_("site.input_switch_theme", { values: { theme: $_(themeLocale) } })}}
 >
     <button class="nav-button aspect-square flex items-center justify-center active:bg-fore active:fill-back">
         {#if $isDarkMode}

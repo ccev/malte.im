@@ -9,6 +9,7 @@
     import {toggleTheme, isDarkMode, THEME_DARK, THEME_LIGHT} from "$lib/theme";
     import ThemeSwitch from "./ThemeSwitch.svelte";
     import type {Unsubscriber} from "svelte/store";
+    import {_} from "svelte-i18n";
 
     onNavigate((navigation) => {
         if (!document.startViewTransition) return
@@ -77,10 +78,10 @@
 <!--                Imprint-->
 <!--            </a>-->
             <a href="/use">
-                Creators &amp; Developers
+                {$_("site.footer_use")}
             </a>
             <a href="/privacy-policy">
-                Privacy Policy
+                {$_("site.footer_privacy_policy")}
             </a>
         </div>
     </footer>

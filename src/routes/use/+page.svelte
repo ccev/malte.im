@@ -25,7 +25,7 @@
                 <a href="https://ko-fi.com/ma1te">supporting this project on Ko-Fi</a>.
             </li>
             <li>
-                If applicable, please do not abuse the API and make use of aggressive caching if possible.
+                Do not abuse the API and make use of aggressive caching if possible.
             </li>
         </ul>
 
