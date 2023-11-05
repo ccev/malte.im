@@ -1,5 +1,6 @@
 {
     "site": {
+        "n_cp": "{n} CP",
         "hero_title_rocket": "Team Rocket Lineups",
         "hero_subtitle_rocket": "Live Lineups, Rewards and Shiny Rates",
         "hero_title_raid": "Raid Bosses",

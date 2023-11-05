@@ -1,5 +1,6 @@
 {
     "site": {
+        "n_cp": "PC {n}",
         "hero_title_rocket": "Alineaciones del Equipo Rocket",
         "hero_subtitle_rocket": "Alineaciones en Vivo, recompensas y Ratio de Shiny",
         "hero_title_raid": "Jefes de Incursión",

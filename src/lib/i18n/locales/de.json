@@ -1,5 +1,6 @@
 {
     "site": {
+        "n_cp": "{n} WP",
         "hero_title_rocket": "Team Rocket Teams",
         "hero_subtitle_rocket": "Aktuelle Teams und Shiny-Raten",
         "hero_title_raid": "Raid-Bosse",

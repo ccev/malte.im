@@ -81,7 +81,7 @@
                     <div class="w-fit flex flex-col justify-around gap-0.5">
                         <div class="flex w-full gap-0.5 whitespace-nowrap">
                             <Box class="bg-[var(--secondary)] flex-shrink basis-1/2 h-6 px-1 flex items-center justify-center">
-                                <span>CP {mon.stats?.cp_20}</span>
+                                <span>{$_("site.n_cp", { values: {n: mon.stats?.cp_20} })}</span>
                             </Box>
                             <Box
                                 class="bg-[var(--secondary)] basis-1/2 h-6 px-1 flex gap-1 items-center w-full justify-center stroke-slate-900 stroke-[8px] fill-none"

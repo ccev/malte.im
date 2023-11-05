@@ -1,5 +1,6 @@
 {
     "site": {
+        "n_cp": "PC {n}",
         "hero_title_rocket": "Invasions Team Rocket",
         "hero_subtitle_rocket": "Invasions du moment, Récompenses et taux de Shiny",
         "hero_title_raid": "Boss de Raid",
@@ -16,9 +17,9 @@
         "input_language": "Langue",
         "input_theme": "Thème",
         "theme_light": "Thème clair",
-        "theme_dark": "Thème foncé",
+        "theme_dark": "Thème sombre",
         "theme_light_short": "Clair",
-        "theme_dark_short": "Foncé",
+        "theme_dark_short": "Sombre",
         "mobile_settings": "Paramètres",
         "close_pop_up": "Fermer la fenêtre"
     },
