@@ -19,7 +19,7 @@
         role="dialog"
     >
         <Box
-            class="bg-back w-full h-full overflow-hidden"
+            class="bg-back w-full h-fit overflow-hidden"
             rounded
         >
             <Box class="w-full flex items-center h-12">
