@@ -1,0 +1,42 @@
+{
+    "site": {
+        "hero_title_rocket": "Składy Team Rocket",
+        "hero_subtitle_rocket": "Na żywo składy, nagrody i szanse na shiny",
+        "hero_title_raid": "Bossowie Raidów",
+        "hero_subtitle_raid": "Wszystkie dostępne raidy i ich rzadkość",
+        "hero_kofi": "Wesprzyj na Ko-Fi",
+        "hero_discord": "Dołącz na Discord",
+        "footer_use": "Twórcy i Deweloperzy",
+        "footer_privacy_policy": "Polityka Prywatności",
+        "title_raid_bosses": "Bossowie Raidów",
+        "title_rocket_lineups": "Składy Team Rocket",
+        "input_change_language": "Zmień język",
+        "input_switch_theme": "Przełącz na {theme}",
+        "input_change_timeframe": "Zmień przedział czasowy",
+        "input_language": "Język",
+        "input_theme": "Motyw",
+        "theme_light": "Jasny Motyw",
+        "theme_dark": "Ciemny Motyw",
+        "theme_light_short": "Jasny",
+        "theme_dark_short": "Ciemny",
+        "mobile_settings": "Ustawienia",
+        "close_pop_up": "Zamknij Pop-Up"
+    },
+    "raid_levels": {
+        "1": "Poziom 1",
+        "2": "Poziom 2",
+        "3": "Poziom 3",
+        "4": "Poziom 4",
+        "5": "Poziom 5",
+        "6": "Mega",
+        "7": "Mega Legendary",
+        "8": "Ultra Beast",
+        "9": "Elite",
+        "10": "Primal",
+        "11": "Shadow Poziom 1",
+        "12": "Shadow Poziom 2",
+        "13": "Shadow Poziom 3",
+        "14": "Shadow Poziom 4",
+        "15": "Shadow Poziom 5"
+    }
+}
