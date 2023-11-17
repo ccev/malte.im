@@ -1,5 +1,6 @@
 {
     "site": {
+        "n_cp": "{n} CP",
         "hero_title_rocket": "ร็อกเกตไลน์อัพ",
         "hero_subtitle_rocket": "ไลน์อัพ รางวัล และอัตราสีแตกต่าง",
         "hero_title_raid": "บอส",

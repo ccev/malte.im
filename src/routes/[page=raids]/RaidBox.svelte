@@ -2,9 +2,6 @@
     import Box from "../../components/design/Box.svelte";
     import "../../styles/types.css"
     import "../../styles/raids.css"
-    import PokemonBox from "../../components/PokemonBox.svelte";
-    import formatHighNumberWithK from "../../utils";
-    import Sparkle from "../../components/Sparkle.svelte";
     import type {Enum} from "../../@types/api";
     import type {Raid} from "../../@types/raidApi";
     import {_} from "svelte-i18n"
@@ -17,6 +14,7 @@
     import Windy from "../../components/icons/weather/Windy.svelte";
     import Rainy from "../../components/icons/weather/Rainy.svelte";
     import Snowy from "../../components/icons/weather/Snowy.svelte";
+    import PokemonBox from "../../components/PokemonBox.svelte";
 
     export let level: Enum
     export let raids: Raid[]
@@ -55,28 +53,10 @@
         {#each raids as mon, key}
             <Box class="bg-slate-700 w-full flex justify-center p-2 max-w-[270px]" inTheme={false}>
                 <div class="flex gap-3">
-                    <Box
-                        class="text-slate-900 min-w-[3.5rem] h-full flex-none"
-                        inTheme={false}
-                    >
-                        <div
-                            class="bg-[var(--primary)] w-full h-full aspect-square relative"
-                        >
-                            <img
-                                class="h-10 w-10 top-1.5 left-0 right-0 mx-auto object-contain absolute"
-                                src={getPokemon(mon)}
-                                alt={mon.pokemon.name}
-                            >
-
-                            <Box
-                                class="bg-[var(--secondary)] absolute bottom-0 text-center w-full text-[0.7rem]"
-                                inTheme={false}
-                            >
-                                {(mon.total / totalMons * 100).toFixed(0)}%
-                            </Box>
-                        </div>
-                    </Box>
-
+                    <PokemonBox
+                        pokemon={mon}
+                        displayChance={mon.total / totalMons}
+                    />
 
                     <div class="w-fit flex flex-col justify-around gap-0.5">
                         <div class="flex w-full gap-0.5 whitespace-nowrap">

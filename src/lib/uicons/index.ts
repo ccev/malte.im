@@ -1,10 +1,10 @@
 import type {Enum} from "../../@types/api";
 
-interface Pokemon {
+export interface Pokemon {
     pokemon: Enum
-    form: Enum | undefined
-    costume: Enum | undefined
-    temp_evolution: Enum | undefined
+    form?: Enum
+    costume?: Enum
+    temp_evolution?: Enum
 }
 
 
