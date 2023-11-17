@@ -52,7 +52,6 @@
                 class="bg-[var(--secondary)] absolute bottom-0 text-center w-full text-[0.7rem]"
                 inTheme={false}
             >
-                <!--{formatPercent(pokemon.total / totalGrunt)}-->
                 {formatPercent(displayChance)}
             </Box>
         {/if}
@@ -61,7 +60,7 @@
             <div class="absolute flex gap-0.5 h-5 -right-0.5 -top-1 text-xs">
                 {#if isCostumed}
                     <Box
-                        class="bg-fuchsia-200 aspect-square flex justify-center items-center h-full w-fit right-0"
+                        class="bg-[var(--secondary)] aspect-square flex justify-center items-center h-full w-fit right-0"
                         inTheme={false}
                     >
                         <CostumeIcon class="h-3.5 stroke-[0.15rem] stroke-slate-900" />
