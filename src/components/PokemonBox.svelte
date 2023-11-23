@@ -39,12 +39,13 @@
     {/if}
 
     <div
-        class="bg-[var(--primary)] w-full h-full aspect-square relative group-hover:hidden"
+        class="bg-[var(--primary)] w-full h-full aspect-square relative group-hover:hidden break-words"
     >
         <img
             class="h-10 w-10 top-1.5 left-0 right-0 mx-auto object-contain absolute"
             src={getPokemon(pokemon)}
-            alt={pokemon.pokemon.name}
+            alt={pokemon.form?.value && !pokemon.form.name.includes("_NORMAL") ? pokemon.form.name : pokemon.pokemon.name}
+            style="font-size: 0.5rem; line-height: 0.65rem;"
         >
 
         {#if displayChance != null}
