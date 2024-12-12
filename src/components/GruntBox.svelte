@@ -139,7 +139,7 @@
 
         <!--The body-->
         <div class="p-3 grid gap-2.5 flex-grow-0">
-            {#each teamPokemon as mons, key}
+            {#each teamPokemon as mons, key (key)}
                 <TeamBox
                     key={key + 1}
                     mons={mons}

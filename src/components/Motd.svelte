@@ -3,7 +3,7 @@
     import Box from "./design/Box.svelte";
 
     const DISCORD = "https://discord.gg/akNbA6v8Ug"
-    const CURRENT_MOTD = "discord1"
+    const CURRENT_MOTD = "newlineups1"
     const SHOW_MOTD_KEY = "hiddenMotd"
     let showMotd = false
 
@@ -30,15 +30,13 @@
                 href={DISCORD}
         >
             <p class="max-w-3xl mx-auto">
-                Hey! This page provides you with the latest information on Team Rocket Grunts.
-                The data is automatically gathered within the last 24 hours.
+                Team Rocket lineups changed! Unfortunately, this site doesn't handle these changes properly yet.
                 <br/>
-                I'm actively working on adding more features to make this resource even better.
-                If you like to follow along, feel free to join my Discord server by
+                Luckily, An update is being worked on! If you want to follow along, feel free
                 <a
                         class="text-blue-600 underline visited:text-purple-600"
                         href={DISCORD}>
-                    clicking here</a>.
+                    to join my Discord server</a>.
 
                 <br />
                 Thank you for visiting, and I hope you find this page helpful!
